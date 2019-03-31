@@ -1,0 +1,36 @@
+{
+  "name": "example",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node node_modules/react-native/local-cli/cli.js start",
+    "test": "jest",
+    "lint": "eslint ."
+  },
+  "dependencies": {
+    "react": "16.8.3",
+    "react-native": "0.59.2",
+    "react-native-dynamic-vector-icons": "0.0.3",
+    "react-native-fast-image": "^5.2.0",
+    "react-native-gradient-card-view": "0.0.14",
+    "react-native-iphone-x-helper": "^1.2.0",
+    "react-native-linear-gradient": "^2.5.4",
+    "react-native-material-ripple": "^0.8.0",
+    "react-native-svg": "^9.3.6",
+    "react-native-svg-charts": "^5.2.0",
+    "react-native-vector-icons": "^6.4.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.4.0",
+    "@babel/runtime": "^7.4.2",
+    "@react-native-community/eslint-config": "^0.0.3",
+    "babel-jest": "^24.5.0",
+    "eslint": "^5.16.0",
+    "jest": "^24.5.0",
+    "metro-react-native-babel-preset": "^0.53.1",
+    "react-test-renderer": "16.8.3"
+  },
+  "jest": {
+    "preset": "react-native"
+  }
+}
