@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import {
-  ActivityIndicator,
   FlatList,
   LayoutAnimation,
   SafeAreaView,
@@ -11,196 +10,11 @@ import {
 } from "react-native";
 import GradientCard from "react-native-gradient-card-view";
 import { LineChart } from "react-native-svg-charts";
-import SearchBar from "./lib/src/SearchBar";
+import SearchBar from "react-native-dynamic-search-bar";
+// Static Data
+import staticData from "./src/data/staticData";
 
 const { width } = Dimensions.get("window");
-
-const listData = [
-  {
-    name: "Bitcoin",
-    shortName: "BTC",
-    value: "$ 4081,95",
-    change: "+ 1,48 ↑",
-    fillColor: "rgba(163, 224, 97, 0.2)",
-    strokeColor: "rgba(163, 224, 97, 1.0)",
-    image: require("./assets/Bitcoin.png"),
-    data: [
-      Math.random() * 10,
-      Math.random() * 10,
-      Math.random() * 10,
-      Math.random() * 10,
-      Math.random() * 10,
-      Math.random() * 10,
-      Math.random() * 10,
-      Math.random() * 10,
-      Math.random() * 10,
-      Math.random() * 10,
-      Math.random() * 10,
-      Math.random() * 10
-    ]
-  },
-  {
-    name: "Ethereum",
-    shortName: "ETH",
-    value: "$ 141.39",
-    change: "+ 0,59 ↓",
-    fillColor: "rgba(234, 53, 53, 0.2)",
-    strokeColor: "rgba(234, 53, 53, 1.0)",
-    image: require("./assets/Ethereum.png"),
-    data: [
-      Math.random() * 10,
-      Math.random() * 10,
-      Math.random() * 10,
-      Math.random() * 10,
-      Math.random() * 10,
-      Math.random() * 10,
-      Math.random() * 10,
-      Math.random() * 10,
-      Math.random() * 10,
-      Math.random() * 10,
-      Math.random() * 10,
-      Math.random() * 10
-    ]
-  },
-  {
-    name: "Litecoin",
-    shortName: "BCH",
-    value: "$ 1535.39",
-    change: "+ 1,51 ↓",
-    fillColor: "rgba(234, 53, 53, 0.2)",
-    strokeColor: "rgba(234, 53, 53, 1.0)",
-    image: require("./assets/Litecoin.png"),
-    data: [
-      Math.random() * 10,
-      Math.random() * 10,
-      Math.random() * 10,
-      Math.random() * 10,
-      Math.random() * 10,
-      Math.random() * 10,
-      Math.random() * 10,
-      Math.random() * 10,
-      Math.random() * 10,
-      Math.random() * 10,
-      Math.random() * 10,
-      Math.random() * 10
-    ]
-  },
-  {
-    name: "Ripple",
-    shortName: "XRP",
-    value: "$ 4081,95",
-    change: "+ 1,48 ↑",
-    fillColor: "rgba(163, 224, 97, 0.2)",
-    strokeColor: "rgba(163, 224, 97, 1.0)",
-    image: require("./assets/Ripple.png"),
-    data: [
-      Math.random() * 10,
-      Math.random() * 10,
-      Math.random() * 10,
-      Math.random() * 10,
-      Math.random() * 10,
-      Math.random() * 10,
-      Math.random() * 10,
-      Math.random() * 10,
-      Math.random() * 10,
-      Math.random() * 10,
-      Math.random() * 10,
-      Math.random() * 10
-    ]
-  },
-  {
-    name: "Dash",
-    shortName: "DSH",
-    value: "$ 141.39",
-    change: "+ 0,59 ↓",
-    fillColor: "rgba(234, 53, 53, 0.2)",
-    strokeColor: "rgba(234, 53, 53, 1.0)",
-    image: require("./assets/Dash.png"),
-    data: [
-      Math.random() * 10,
-      Math.random() * 10,
-      Math.random() * 10,
-      Math.random() * 10,
-      Math.random() * 10,
-      Math.random() * 10,
-      Math.random() * 10,
-      Math.random() * 10,
-      Math.random() * 10,
-      Math.random() * 10,
-      Math.random() * 10,
-      Math.random() * 10
-    ]
-  },
-  {
-    name: "Iota",
-    shortName: "MIOTA",
-    value: "$ 141.39",
-    change: "+ 0,59 ↓",
-    fillColor: "rgba(234, 53, 53, 0.2)",
-    strokeColor: "rgba(234, 53, 53, 1.0)",
-    image: require("./assets/IOTA.png"),
-    data: [
-      Math.random() * 10,
-      Math.random() * 10,
-      Math.random() * 10,
-      Math.random() * 10,
-      Math.random() * 10,
-      Math.random() * 10,
-      Math.random() * 10,
-      Math.random() * 10,
-      Math.random() * 10,
-      Math.random() * 10,
-      Math.random() * 10,
-      Math.random() * 10
-    ]
-  },
-  {
-    name: "Eos",
-    shortName: "EOS",
-    value: "$ 4081,95",
-    change: "+ 1,48 ↑",
-    fillColor: "rgba(163, 224, 97, 0.2)",
-    strokeColor: "rgba(163, 224, 97, 1.0)",
-    image: require("./assets/EOS.png"),
-    data: [
-      Math.random() * 10,
-      Math.random() * 10,
-      Math.random() * 10,
-      Math.random() * 10,
-      Math.random() * 10,
-      Math.random() * 10,
-      Math.random() * 10,
-      Math.random() * 10,
-      Math.random() * 10,
-      Math.random() * 10,
-      Math.random() * 10,
-      Math.random() * 10
-    ]
-  },
-  {
-    name: "Neo",
-    shortName: "NEO",
-    value: "$ 141.39",
-    change: "+ 0,59 ↓",
-    fillColor: "rgba(234, 53, 53, 0.2)",
-    strokeColor: "rgba(234, 53, 53, 1.0)",
-    image: require("./assets/Netko-coin.png"),
-    data: [
-      Math.random() * 10,
-      Math.random() * 10,
-      Math.random() * 10,
-      Math.random() * 10,
-      Math.random() * 10,
-      Math.random() * 10,
-      Math.random() * 10,
-      Math.random() * 10,
-      Math.random() * 10,
-      Math.random() * 10,
-      Math.random() * 10,
-      Math.random() * 10
-    ]
-  }
-];
 
 // Spring
 var CustomLayoutSpring = {
@@ -233,8 +47,8 @@ export default class App extends Component {
     super(props);
     this.state = {
       query: "",
-      dataSource: listData,
-      dataBackup: listData,
+      dataSource: staticData,
+      dataBackup: staticData,
       isLoading: true,
       page: 1,
       seed: 1,
@@ -329,13 +143,6 @@ export default class App extends Component {
   };
 
   render() {
-    // if (this.state.isLoading) {
-    //   return (
-    //     <View style={{ flex: 1, padding: 20, justifyContent: "center" }}>
-    //       <ActivityIndicator />
-    //     </View>
-    //   );
-    // }
     return (
       <SafeAreaView style={{ flex: 1, backgroundColor: "#21283d" }}>
         <StatusBar barStyle={"light-content"} />
