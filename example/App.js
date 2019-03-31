@@ -5,11 +5,15 @@ import {
   LayoutAnimation,
   SafeAreaView,
   StatusBar,
+  Platform,
+  Dimensions,
   View
 } from "react-native";
 import GradientCard from "react-native-gradient-card-view";
 import { LineChart } from "react-native-svg-charts";
 import SearchBar from "./lib/src/SearchBar";
+
+const { width } = Dimensions.get("window");
 
 const listData = [
   {
@@ -256,11 +260,32 @@ export default class App extends Component {
     return (
       <GradientCard
         title={item.name}
-        shadowColor="#000"
+        shadowStyle={{
+          ...Platform.select({
+            ios: {
+              shadowColor: "#000",
+              shadowOffset: {
+                width: 3,
+                height: 3
+              },
+              shadowRadius: 3,
+              shadowOpacity: 0.4
+            },
+            android: {
+              elevation: 3
+            }
+          })
+        }}
         imageSource={item.image}
         centerTitle={item.value}
         subtitle={item.shortName}
-        style={{ marginTop: 16 }}
+        width={width * 0.9}
+        style={{
+          width: width,
+          marginTop: 16,
+          justifyContent: "center",
+          alignItems: "center"
+        }}
         centerSubtitle={item.change}
         centerSubtitleStyle={{
           fontSize: 12,
@@ -321,13 +346,16 @@ export default class App extends Component {
             shadowColor="#282828"
             cancelIconColor="#c6c6c6"
             backgroundColor="#353d5e"
-            placeholder="Buradan arama yapabilirsiniz"
+            placeholder="Search here"
             onChangeText={text => {
               this.filterList(text);
             }}
+            onPressCancel={() => {
+              this.filterList("");
+            }}
             onPress={() => alert("onPress")}
           />
-          <View style={{ top: 24 }}>
+          <View style={{ top: 12 }}>
             <FlatList
               data={this.state.dataSource}
               renderItem={({ item }) => this.renderItem(item)}
