@@ -8,11 +8,9 @@ Fully customizable Dynamic Search Bar for React Native.
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 [![styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
 
-<p align="left">
-<img alt="React Native Dynamic Search Bar" src="https://github.com/WrathChaos/react-native-dynamic-search-bar/blob/master/assets/Screenshots/example.png" width="46.7%"/>
-</p>
-<p align="right">
-<img alt="React Native Dynamic Search Bar" src="https://github.com/WrathChaos/react-native-dynamic-search-bar/blob/master/assets/Screenshots/SearchGIF.gif" width="46.7%"/>
+<p align="center">
+<img alt="React Native Dynamic Search Bar" src="https://github.com/WrathChaos/react-native-dynamic-search-bar/blob/master/assets/Screenshots/example.png" width="49.7%"/>
+<img alt="React Native Dynamic Search Bar" src="https://github.com/WrathChaos/react-native-dynamic-search-bar/blob/master/assets/Screenshots/SearchGIF.gif" width="49.7%"/>
 </p>
 
 
