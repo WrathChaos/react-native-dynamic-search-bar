@@ -21,7 +21,7 @@ Add the dependency:
 ### React Native:
 
 ```ruby
-npm i react-native-dynamic-search
+npm i react-native-dynamic-search-bar
 ```
 
 
