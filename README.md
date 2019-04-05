@@ -13,7 +13,6 @@ Fully customizable Dynamic Search Bar for React Native.
 <img alt="React Native Dynamic Search Bar" src="https://github.com/WrathChaos/react-native-dynamic-search-bar/blob/master/assets/Screenshots/SearchGIF.gif" width="49.7%"/>
 </p>
 
-
 ## Installation
 
 Add the dependency:
@@ -27,7 +26,7 @@ npm i react-native-dynamic-search-bar
 
 ## Peer Dependencies
 
-##### IMPORTANT! You need install them.
+###### IMPORTANT! You need install them.
 
 ```
 "react": ">= 16.x.x",
@@ -35,6 +34,14 @@ npm i react-native-dynamic-search-bar
 "react-native-vector-icons": ">= 6,x,x",
 "react-native-dynamic-vector-icons": ">= x,x,x"
 ```
+
+# Usage
+
+There are two modes in the library: 
+<ul>
+  <li><b>Search Button</b></li>
+  <li><b>Search TextInput</b></li>
+</ul>
 
 ## Basic Usage
 
