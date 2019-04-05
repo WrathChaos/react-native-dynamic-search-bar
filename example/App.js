@@ -11,6 +11,7 @@ import {
 import GradientCard from "react-native-gradient-card-view";
 import { LineChart } from "react-native-svg-charts";
 import SearchBar from "react-native-dynamic-search-bar";
+
 // Static Data
 import staticData from "./src/data/staticData";
 
