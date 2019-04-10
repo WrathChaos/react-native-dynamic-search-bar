@@ -149,6 +149,7 @@ export default class App extends Component {
         <StatusBar barStyle={"light-content"} />
         <View style={styles.container}>
           <SearchBar
+            autoFocus={false}
             fontColor="#c6c6c6"
             iconColor="#c6c6c6"
             shadowColor="#282828"
@@ -180,6 +181,11 @@ export default class App extends Component {
 
 const styles = {
   container: {
+    ...Platform.select({
+      android: {
+        top: 24
+      }
+    }),
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
