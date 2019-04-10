@@ -109,6 +109,7 @@ You can check the example for the advanced usage
 | onPressCancel       | function  |     function      | set your own function for the cancel button's onPress functionality               |
 | cancelComponent     | component |     component     | set your own component instead of cancel component                                |
 | cancelButtonDisable |  boolean  |       false       | disable cancel button component                                                   |
+| autoFocus           |  boolean  |       true        | change the autoFocus mode for the TextInput                                       |
 
 ### ToDos
 
