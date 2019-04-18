@@ -111,6 +111,30 @@ You can check the example for the advanced usage
 | cancelButtonDisable |  boolean  |       false       | disable cancel button component                                                   |
 | autoFocus           |  boolean  |       true        | change the autoFocus mode for the TextInput                                       |
 
+## Known Issues
+### Android
+#### Vector Icons are not showing :O
+-> You need to add this line of code into app/gradle
+
+```ruby
+apply from: "../../node_modules/react-native-vector-icons/fonts.gradle" 
+```
+
+#### Animations are not working on the Android like the example ?
+-> You need to enable experimental LayoutAnimation on the android. Here is how to do it:
+
+```ruby
+import {UIManager} from 'react-native';
+
+constructor() {
+    super();
+
+    if (Platform.OS === 'android') {
+      UIManager.setLayoutAnimationEnabledExperimental && UIManager.setLayoutAnimationEnabledExperimental(true);
+    }
+}
+```
+
 ### ToDos
 
 - [x] LICENSE
