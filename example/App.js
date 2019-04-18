@@ -1,47 +1,23 @@
 import React, { Component } from "react";
 import {
-  FlatList,
-  LayoutAnimation,
-  SafeAreaView,
-  StatusBar,
+  View,
   Platform,
+  FlatList,
+  StatusBar,
+  UIManager,
   Dimensions,
-  View
+  SafeAreaView,
+  LayoutAnimation
 } from "react-native";
 import GradientCard from "react-native-gradient-card-view";
 import { LineChart } from "react-native-svg-charts";
 import SearchBar from "react-native-dynamic-search-bar";
+import { CustomLayoutSpring } from "react-native-animation-layout";
 
 // Static Data
 import staticData from "./src/data/staticData";
 
 const { width } = Dimensions.get("window");
-
-// Spring
-var CustomLayoutSpring = {
-  duration: 700,
-  create: {
-    type: LayoutAnimation.Types.spring,
-    property: LayoutAnimation.Properties.scaleXY,
-    springDamping: 0.7
-  },
-  update: {
-    type: LayoutAnimation.Types.spring,
-    springDamping: 0.7
-  }
-};
-
-// Linear with easing
-var CustomLayoutLinear = {
-  duration: 500,
-  create: {
-    type: LayoutAnimation.Types.linear,
-    property: LayoutAnimation.Properties.opacity
-  },
-  update: {
-    type: LayoutAnimation.Types.curveEaseInEaseOut
-  }
-};
 
 export default class App extends Component {
   constructor(props) {
@@ -55,6 +31,11 @@ export default class App extends Component {
       seed: 1,
       refreshing: false
     };
+
+    if (Platform.OS === "android") {
+      UIManager.setLayoutAnimationEnabledExperimental &&
+        UIManager.setLayoutAnimationEnabledExperimental(true);
+    }
   }
 
   filterList = text => {
@@ -64,7 +45,7 @@ export default class App extends Component {
       const textData = text.toLowerCase();
       return itemData.indexOf(textData) > -1;
     });
-    LayoutAnimation.configureNext(CustomLayoutSpring);
+    LayoutAnimation.configureNext(CustomLayoutSpring(1050, 0.01, "scaleXY"));
     this.setState({
       query: text,
       dataSource: newData
@@ -109,16 +90,18 @@ export default class App extends Component {
           color: item.strokeColor
         }}
         rightComponent={
-          <LineChart
-            data={item.data}
-            style={styles.chartStyle}
-            contentInset={styles.chartContentInset}
-            svg={{
-              strokeWidth: 1.5,
-              fill: item.fillColor,
-              stroke: item.strokeColor
-            }}
-          />
+          <View>
+            <LineChart
+              data={item.data}
+              style={styles.chartStyle}
+              contentInset={styles.chartContentInset}
+              svg={{
+                strokeWidth: 1.5,
+                fill: item.fillColor,
+                stroke: item.strokeColor
+              }}
+            />
+          </View>
         }
       />
     );
