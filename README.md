@@ -32,7 +32,9 @@ npm i react-native-dynamic-search-bar
 "react": ">= 16.x.x",
 "react-native": ">= 0.55.x",
 "react-native-vector-icons": ">= 6,x,x",
-"react-native-dynamic-vector-icons": ">= x,x,x"
+"react-native-dynamic-vector-icons": ">= x,x,x" 
+// Expo Version
+"react-native-dynamic-vector-icons": "WrathChaos/react-native-dynamic-vector-icons#expo"
 ```
 
 # Usage
@@ -110,6 +112,13 @@ You can check the example for the advanced usage
 | cancelComponent     | component |     component     | set your own component instead of cancel component                                |
 | cancelButtonDisable |  boolean  |       false       | disable cancel button component                                                   |
 | autoFocus           |  boolean  |       true        | change the autoFocus mode for the TextInput                                       |
+## Expo Compatibility
+Dynamic Search Bar is usable with Expo. You just need to add a peer dependency: 
+
+```
+"react-native-dynamic-vector-icons": "WrathChaos/react-native-dynamic-vector-icons#expo"
+```
+
 
 ## Known Issues
 ### Android
