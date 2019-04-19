@@ -33,6 +33,7 @@ npm i react-native-dynamic-search-bar
 "react-native": ">= 0.55.x",
 "react-native-vector-icons": ">= 6,x,x",
 "react-native-dynamic-vector-icons": ">= x,x,x" 
+
 // Expo Version
 "react-native-dynamic-vector-icons": "WrathChaos/react-native-dynamic-vector-icons#expo"
 ```
