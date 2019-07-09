@@ -132,7 +132,7 @@ export default class App extends Component {
         <StatusBar barStyle={"light-content"} />
         <View style={styles.container}>
           <SearchBar
-            onPressToFocus={false}
+            onPressToFocus
             autoFocus={false}
             fontColor="#c6c6c6"
             iconColor="#c6c6c6"
