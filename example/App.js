@@ -45,7 +45,7 @@ export default class App extends Component {
       const textData = text.toLowerCase();
       return itemData.indexOf(textData) > -1;
     });
-    LayoutAnimation.configureNext(CustomLayoutSpring(1050, 0.01, "scaleXY"));
+    LayoutAnimation.configureNext(CustomLayoutSpring(null, null, "scaleXY"));
     this.setState({
       query: text,
       dataSource: newData
@@ -132,6 +132,7 @@ export default class App extends Component {
         <StatusBar barStyle={"light-content"} />
         <View style={styles.container}>
           <SearchBar
+            onPressToFocus={false}
             autoFocus={false}
             fontColor="#c6c6c6"
             iconColor="#c6c6c6"
