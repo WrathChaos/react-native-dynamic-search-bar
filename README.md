@@ -154,6 +154,7 @@ constructor() {
 
 - [x] LICENSE
 - [ ] Write an article about the lib on Medium
+- [ ] Typescript Challenge!
 
 # Change Log
 
