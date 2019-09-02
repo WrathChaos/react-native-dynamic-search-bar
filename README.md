@@ -114,7 +114,7 @@ You can check the example for the advanced usage
 | onPressCancel       | function  |     function      | set your own function for the cancel button's onPress functionality                                   |
 | cancelComponent     | component |     component     | set your own component instead of cancel component                                                    |
 | cancelButtonDisable |  boolean  |       false       | disable cancel button component                                                                       |
-| autoFocus           |  boolean  |       true        | change the autoFocus mode for the TextInput                                                           |
+| autoFocus           |  boolean  |       true        | change the autoFocus mode for the TextInput                          | noExtraMargin           |  boolean  |       false        | remove extra padding on iPhone X devices                                                           |
 | onPressToFocus      |  boolean  |       false       | when enable it, onPress will automatically focus on the TextInput and opens the soft virtual keyboard |
 
 ## Expo Compatibility
