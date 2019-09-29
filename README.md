@@ -23,7 +23,7 @@ Add the dependency:
 
 ### React Native:
 
-```ruby
+```js
 npm i react-native-dynamic-search-bar
 ```
 
@@ -31,7 +31,7 @@ npm i react-native-dynamic-search-bar
 
 ###### IMPORTANT! You need install them.
 
-```
+```js
 "react": ">= 16.x.x",
 "react-native": ">= 0.55.x",
 "react-native-vector-icons": ">= 6,x,x",
@@ -43,6 +43,14 @@ npm i react-native-dynamic-search-bar
 
 # Usage
 
+## Import
+
+```js
+import SearchBar from "react-native-dynamic-search-bar"
+```
+
+## Component Options
+
 There are two modes in the library:
 
 <ul>
@@ -52,7 +60,7 @@ There are two modes in the library:
 
 ## Basic Usage
 
-```ruby
+```js
 <SearchBar
   placeholder="Search here"
   onChangeText={text => {
@@ -69,7 +77,7 @@ There are two modes in the library:
 
 You can check the example for the advanced usage
 
-```ruby
+```js
 <SearchBar
   fontColor="#c6c6c6"
   iconColor="#c6c6c6"
@@ -122,7 +130,7 @@ You can check the example for the advanced usage
 
 Dynamic Search Bar is usable with Expo. You just need to add a peer dependency:
 
-```
+```js
 "react-native-dynamic-vector-icons": "WrathChaos/react-native-dynamic-vector-icons#expo"
 ```
 
@@ -134,7 +142,7 @@ Dynamic Search Bar is usable with Expo. You just need to add a peer dependency:
 
 -> You need to add this line of code into app/gradle
 
-```ruby
+```js
 apply from: "../../node_modules/react-native-vector-icons/fonts.gradle"
 ```
 
@@ -142,7 +150,7 @@ apply from: "../../node_modules/react-native-vector-icons/fonts.gradle"
 
 -> You need to enable experimental LayoutAnimation on the android. Here is how to do it:
 
-```ruby
+```js
 import {UIManager} from 'react-native';
 
 constructor() {
@@ -154,10 +162,10 @@ constructor() {
 }
 ```
 
-### ToDos
+### Future Plans
 
-- [x] LICENSE
-- [ ] Write an article about the lib on Medium
+- [x] ~~LICENSE~~
+- [x] ~~Write an article about the lib on Medium~~
 - [ ] Typescript Challenge!
 
 # Change Log
