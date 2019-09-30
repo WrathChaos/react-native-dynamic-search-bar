@@ -12,6 +12,14 @@
 ![Platform - Android and iOS](https://img.shields.io/badge/platform-Android%20%7C%20iOS-blue.svg?style=for-the-badge)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
 
+
+<p align="center">
+  <a href="https://freakycoder.com/react-native-library-dynamic-search-bar-c03fea9fae36">
+    <img height="175" width="35%" alt="React Native Dynamic Search Bar" src="https://geniallysupport.zendesk.com/hc/article_attachments/360003784692/medium.jpeg"/>
+  </a>
+</p>
+
+
 <p align="center">
 <img alt="React Native Dynamic Search Bar" src="https://github.com/WrathChaos/react-native-dynamic-search-bar/blob/master/assets/Screenshots/example.png" width="40%" height="735"/>
 <img alt="React Native Dynamic Search Bar" src="https://github.com/WrathChaos/react-native-dynamic-search-bar/blob/master/assets/Screenshots/SearchGIF.gif" width="49.7%"/>
