@@ -68,7 +68,7 @@ There are two modes in the library:
 
 ## Basic Usage
 
-```js
+```jsx
 <SearchBar
   placeholder="Search here"
   onChangeText={text => {
@@ -85,7 +85,7 @@ There are two modes in the library:
 
 You can check the example for the advanced usage
 
-```js
+```jsx
 <SearchBar
   fontColor="#c6c6c6"
   iconColor="#c6c6c6"
@@ -150,7 +150,7 @@ Dynamic Search Bar is usable with Expo. You just need to add a peer dependency:
 
 -> You need to add this line of code into app/gradle
 
-```js
+```java
 apply from: "../../node_modules/react-native-vector-icons/fonts.gradle"
 ```
 
