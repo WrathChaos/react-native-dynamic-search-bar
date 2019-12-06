@@ -1,5 +1,20 @@
 # Change Log
 
+## [Unreleased](https://github.com/WrathChaos/react-native-dynamic-search-bar/tree/HEAD)
+
+[Full Changelog](https://github.com/WrathChaos/react-native-dynamic-search-bar/compare/0.3.0...HEAD)
+
+**Closed issues:**
+
+- react-native-iphone-x-helper module not found [\#8](https://github.com/WrathChaos/react-native-dynamic-search-bar/issues/8)
+
+## [0.3.0](https://github.com/WrathChaos/react-native-dynamic-search-bar/tree/0.3.0) (2019-12-06)
+[Full Changelog](https://github.com/WrathChaos/react-native-dynamic-search-bar/compare/0.2.1...0.3.0)
+
+**Closed issues:**
+
+- Request To Add Product in Start React [\#10](https://github.com/WrathChaos/react-native-dynamic-search-bar/issues/10)
+
 ## [0.2.1](https://github.com/WrathChaos/react-native-dynamic-search-bar/tree/0.2.1) (2019-09-02)
 [Full Changelog](https://github.com/WrathChaos/react-native-dynamic-search-bar/compare/0.2.0...0.2.1)
 
