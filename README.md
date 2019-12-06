@@ -1,4 +1,4 @@
-<img alt="React Native Dynamic Search Bar" src="https://github.com/WrathChaos/react-native-dynamic-search-bar/blob/master/assets/logo.png" width="1050"/>
+<img alt="React Native Dynamic Search Bar" src="assets/logo.png" width="1050"/>
 
 [![Battle Tested ✅](https://img.shields.io/badge/-Battle--Tested%20%E2%9C%85-03666e?style=for-the-badge)](https://github.com/WrathChaos/react-native-button)
 
@@ -17,8 +17,8 @@
 </p>
 
 <p align="center">
-<img alt="React Native Dynamic Search Bar" src="https://github.com/WrathChaos/react-native-dynamic-search-bar/blob/master/assets/Screenshots/example.png" width="40%" height="735"/>
-<img alt="React Native Dynamic Search Bar" src="https://github.com/WrathChaos/react-native-dynamic-search-bar/blob/master/assets/Screenshots/SearchGIF.gif" width="49.7%"/>
+<img alt="React Native Dynamic Search Bar" src="assets/Screenshots/example.png" width="40%" height="735"/>
+<img alt="React Native Dynamic Search Bar" src="assets/Screenshots/SearchGIF.gif" width="49.7%"/>
 </p>
 
 ## Installation
@@ -34,7 +34,7 @@ npm i react-native-dynamic-search-bar
 ### Expo Version
 
 ```js
-npm i WrathChaos/react-native-dynamic-search-bar
+npm i WrathChaos/react-native-dynamic-search-bar#expo
 npm i WrathChaos/react-native-dynamic-vector-icons#expo
 ```
 
