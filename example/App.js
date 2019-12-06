@@ -5,31 +5,30 @@ import {
   FlatList,
   StatusBar,
   UIManager,
-  Dimensions,
   SafeAreaView,
   LayoutAnimation
 } from "react-native";
-import GradientCard from "react-native-gradient-card-view";
+import SearchBar from "./lib/src/SearchBar";
 import { LineChart } from "react-native-svg-charts";
-import SearchBar from "react-native-dynamic-search-bar";
+import GradientCard from "react-native-gradient-card-view";
+// import SearchBar from "react-native-dynamic-search-bar";
+import { ScreenWidth } from "@freakycoder/react-native-helpers";
 import { CustomLayoutSpring } from "react-native-animation-layout";
-
 // Static Data
 import staticData from "./src/data/staticData";
-
-const { width } = Dimensions.get("window");
+import styles, { centerSubtitleStyle } from "./styles";
 
 export default class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      query: "",
-      dataSource: staticData,
-      dataBackup: staticData,
-      isLoading: true,
       page: 1,
       seed: 1,
-      refreshing: false
+      query: "",
+      isLoading: true,
+      refreshing: false,
+      dataBackup: staticData,
+      dataSource: staticData
     };
 
     if (Platform.OS === "android") {
@@ -52,57 +51,35 @@ export default class App extends Component {
     });
   };
 
+  renderRightComponent = item => (
+    <View>
+      <LineChart
+        data={item.data}
+        style={styles.chartStyle}
+        contentInset={styles.chartContentInset}
+        svg={{
+          strokeWidth: 1.5,
+          fill: item.fillColor,
+          stroke: item.strokeColor
+        }}
+      />
+    </View>
+  );
+
   renderItem(item) {
     return (
       <GradientCard
+        key={item.name}
         title={item.name}
-        shadowStyle={{
-          ...Platform.select({
-            ios: {
-              shadowColor: "#000",
-              shadowOffset: {
-                width: 3,
-                height: 3
-              },
-              shadowRadius: 3,
-              shadowOpacity: 0.4
-            },
-            android: {
-              elevation: 3
-            }
-          })
-        }}
+        style={styles.cardStyle}
         imageSource={item.image}
         centerTitle={item.value}
         subtitle={item.shortName}
-        width={width * 0.9}
-        style={{
-          width: width,
-          marginTop: 16,
-          justifyContent: "center",
-          alignItems: "center"
-        }}
+        width={ScreenWidth * 0.9}
         centerSubtitle={item.change}
-        centerSubtitleStyle={{
-          fontSize: 12,
-          marginLeft: 8,
-          textAlign: "center",
-          color: item.strokeColor
-        }}
-        rightComponent={
-          <View>
-            <LineChart
-              data={item.data}
-              style={styles.chartStyle}
-              contentInset={styles.chartContentInset}
-              svg={{
-                strokeWidth: 1.5,
-                fill: item.fillColor,
-                stroke: item.strokeColor
-              }}
-            />
-          </View>
-        }
+        shadowStyle={styles.cardShadowStyle}
+        centerSubtitleStyle={centerSubtitleStyle(item)}
+        rightComponent={this.renderRightComponent(item)}
       />
     );
   }
@@ -128,7 +105,7 @@ export default class App extends Component {
 
   render() {
     return (
-      <SafeAreaView style={{ flex: 1, backgroundColor: "#21283d" }}>
+      <SafeAreaView style={styles.safeAreaViewStyle}>
         <StatusBar barStyle={"light-content"} />
         <View style={styles.container}>
           <SearchBar
@@ -148,13 +125,13 @@ export default class App extends Component {
             }}
             onPress={() => alert("onPress")}
           />
-          <View style={{ top: 12 }}>
+          <View style={styles.flatListStyle}>
             <FlatList
-              data={this.state.dataSource}
-              renderItem={({ item }) => this.renderItem(item)}
-              onEndReached={this.loadMore}
               onRefresh={this.onRefresh}
+              data={this.state.dataSource}
+              onEndReached={this.loadMore}
               refreshing={this.state.refreshing}
+              renderItem={({ item }) => this.renderItem(item)}
             />
           </View>
         </View>
@@ -162,35 +139,3 @@ export default class App extends Component {
     );
   }
 }
-
-const styles = {
-  container: {
-    ...Platform.select({
-      android: {
-        top: 24
-      }
-    }),
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-    backgroundColor: "#21283d"
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: "center",
-    margin: 10
-  },
-  instructions: {
-    textAlign: "center",
-    color: "#333333",
-    marginBottom: 5
-  },
-  chartStyle: {
-    height: 100,
-    width: 100
-  },
-  chartContentInset: {
-    top: 30,
-    bottom: 30
-  }
-};

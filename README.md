@@ -2,9 +2,7 @@
 
 [![Battle Tested ✅](https://img.shields.io/badge/-Battle--Tested%20%E2%9C%85-03666e?style=for-the-badge)](https://github.com/WrathChaos/react-native-button)
 
-
 [![Fully customizable Dynamic Search Bar for React Native](https://img.shields.io/badge/-Fully%20customizable%20Dynamic%20Search%20Bar%20for%20React%20Native-lightgrey?style=for-the-badge)](https://github.com/WrathChaos/react-native-dynamic-search-bar)
-
 
 [![npm version](https://img.shields.io/npm/v/react-native-dynamic-search-bar.svg?style=for-the-badge)](https://www.npmjs.com/package/react-native-dynamic-search-bar)
 [![npm](https://img.shields.io/npm/dt/react-native-dynamic-search-bar.svg?style=for-the-badge)](https://www.npmjs.com/package/react-native-dynamic-search-bar)
@@ -12,13 +10,11 @@
 ![Platform - Android and iOS](https://img.shields.io/badge/platform-Android%20%7C%20iOS-blue.svg?style=for-the-badge)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
 
-
 <p align="center">
   <a href="https://freakycoder.com/react-native-library-dynamic-search-bar-c03fea9fae36">
     <img height="175" width="35%" alt="React Native Dynamic Search Bar" src="https://geniallysupport.zendesk.com/hc/article_attachments/360003784692/medium.jpeg"/>
   </a>
 </p>
-
 
 <p align="center">
 <img alt="React Native Dynamic Search Bar" src="https://github.com/WrathChaos/react-native-dynamic-search-bar/blob/master/assets/Screenshots/example.png" width="40%" height="735"/>
@@ -29,10 +25,17 @@
 
 Add the dependency:
 
-### React Native:
+### React Native
 
 ```js
 npm i react-native-dynamic-search-bar
+```
+
+### Expo Version
+
+```js
+npm i WrathChaos/react-native-dynamic-search-bar
+npm i WrathChaos/react-native-dynamic-vector-icons#expo
 ```
 
 ## Peer Dependencies
@@ -42,11 +45,9 @@ npm i react-native-dynamic-search-bar
 ```js
 "react": ">= 16.x.x",
 "react-native": ">= 0.55.x",
-"react-native-vector-icons": ">= 6,x,x",
-"react-native-dynamic-vector-icons": ">= x,x,x"
-
-// Expo Version
-"react-native-dynamic-vector-icons": "WrathChaos/react-native-dynamic-vector-icons#expo"
+"react-native-vector-icons": ">= 6.x.x",
+"react-native-dynamic-vector-icons": ">= x.x.x",
+"@freakycoder/react-native-helpers": ">= 0.1.0"
 ```
 
 # Usage
@@ -54,7 +55,7 @@ npm i react-native-dynamic-search-bar
 ## Import
 
 ```js
-import SearchBar from "react-native-dynamic-search-bar"
+import SearchBar from "react-native-dynamic-search-bar";
 ```
 
 ## Component Options
@@ -72,7 +73,7 @@ There are two modes in the library:
 <SearchBar
   placeholder="Search here"
   onChangeText={text => {
-    console.log(text)
+    console.log(text);
   }}
   onPressCancel={() => {
     this.filterList("");
@@ -179,6 +180,7 @@ constructor() {
 # Change Log
 
 ## [0.2.1](https://github.com/WrathChaos/react-native-dynamic-search-bar/tree/0.2.1) (2019-09-02)
+
 [Full Changelog](https://github.com/WrathChaos/react-native-dynamic-search-bar/compare/0.2.0...0.2.1)
 
 **Implemented enhancements:**
@@ -193,6 +195,7 @@ constructor() {
 - Bump lodash from 4.17.11 to 4.17.14 in /example [\#5](https://github.com/WrathChaos/react-native-dynamic-search-bar/pull/5) ([dependabot[bot]](https://github.com/apps/dependabot))
 
 ## [0.2.0](https://github.com/WrathChaos/react-native-dynamic-search-bar/tree/0.2.0) (2019-07-09)
+
 [Full Changelog](https://github.com/WrathChaos/react-native-dynamic-search-bar/compare/0.1.11...0.2.0)
 
 **Merged pull requests:**
@@ -201,6 +204,7 @@ constructor() {
 - Bump js-yaml from 3.13.0 to 3.13.1 in /example [\#2](https://github.com/WrathChaos/react-native-dynamic-search-bar/pull/2) ([dependabot[bot]](https://github.com/apps/dependabot))
 
 ## [0.1.11](https://github.com/WrathChaos/react-native-dynamic-search-bar/tree/0.1.11) (2019-04-20)
+
 [Full Changelog](https://github.com/WrathChaos/react-native-dynamic-search-bar/compare/0.1.1...0.1.11)
 
 **Closed issues:**
@@ -208,21 +212,24 @@ constructor() {
 - on Android, there is no animation [\#1](https://github.com/WrathChaos/react-native-dynamic-search-bar/issues/1)
 
 ## [0.1.1](https://github.com/WrathChaos/react-native-dynamic-search-bar/tree/0.1.1) (2019-04-18)
+
 [Full Changelog](https://github.com/WrathChaos/react-native-dynamic-search-bar/compare/0.0.13...0.1.1)
 
 ## [0.0.13](https://github.com/WrathChaos/react-native-dynamic-search-bar/tree/0.0.13) (2019-04-02)
+
 [Full Changelog](https://github.com/WrathChaos/react-native-dynamic-search-bar/compare/0.0.12...0.0.13)
 
 ## [0.0.12](https://github.com/WrathChaos/react-native-dynamic-search-bar/tree/0.0.12) (2019-04-02)
+
 [Full Changelog](https://github.com/WrathChaos/react-native-dynamic-search-bar/compare/0.0.11...0.0.12)
 
 ## [0.0.11](https://github.com/WrathChaos/react-native-dynamic-search-bar/tree/0.0.11) (2019-04-02)
+
 [Full Changelog](https://github.com/WrathChaos/react-native-dynamic-search-bar/compare/0.0.1...0.0.11)
 
 ## [0.0.1](https://github.com/WrathChaos/react-native-dynamic-search-bar/tree/0.0.1) (2019-03-31)
 
-
-\* *This Change Log was automatically generated by [github_changelog_generator](https://github.com/skywinder/Github-Changelog-Generator)*
+\* _This Change Log was automatically generated by [github_changelog_generator](https://github.com/skywinder/Github-Changelog-Generator)_
 
 ## Author
 
