@@ -14,7 +14,7 @@
     "react-native": "0.61.5",
     "@freakycoder/react-native-helpers": "^0.1.0",
     "react-native-animation-layout": "0.0.13",
-    "react-native-dynamic-search-bar": "0.2.1",
+    "react-native-dynamic-search-bar": "0.3.1",
     "react-native-dynamic-vector-icons": "0.2.1",
     "react-native-fast-image": "^7.0.2",
     "react-native-gradient-card-view": "0.1.0",

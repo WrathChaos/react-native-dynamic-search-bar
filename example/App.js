@@ -8,10 +8,9 @@ import {
   SafeAreaView,
   LayoutAnimation
 } from "react-native";
-import SearchBar from "./lib/src/SearchBar";
 import { LineChart } from "react-native-svg-charts";
+import SearchBar from "react-native-dynamic-search-bar";
 import GradientCard from "react-native-gradient-card-view";
-// import SearchBar from "react-native-dynamic-search-bar";
 import { ScreenWidth } from "@freakycoder/react-native-helpers";
 import { CustomLayoutSpring } from "react-native-animation-layout";
 // Static Data

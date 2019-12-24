@@ -160,7 +160,7 @@ apply from: "../../node_modules/react-native-vector-icons/fonts.gradle"
 -> You need to enable experimental LayoutAnimation on the android. Here is how to do it:
 
 ```js
-import {UIManager} from 'react-native';
+import { UIManager } from 'react-native';
 
 constructor() {
     super();
