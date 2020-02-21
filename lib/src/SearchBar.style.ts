@@ -11,7 +11,7 @@ interface Style {
   textInputContainer: ViewStyle;
 }
 
-export function container(props) {
+export function container(props: any) {
   const {
     height = 35,
     width = ScreenWidth * 0.93,
@@ -65,7 +65,7 @@ export function _shadowStyle(shadowColor: string = "#757575") {
   };
 }
 
-export function ifIPhoneXHeader(noExtraMargin: bool) {
+export function ifIPhoneXHeader(noExtraMargin: boolean) {
   if (noExtraMargin) return { marginTop: 16 };
   return {
     marginTop: isIPhoneXFamily() ? 44 : 16

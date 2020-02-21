@@ -42,9 +42,10 @@ interface IProps {
 
 interface IState {}
 
-let textInputRef = null;
+let textInputRef: any = null;
 
 export default class SearchBar extends Component<IProps, IState> {
+  textInput: any = null;
   render() {
     const {
       onPress,
@@ -75,8 +76,6 @@ export default class SearchBar extends Component<IProps, IState> {
 
     return (
       <TouchableOpacity
-        rippleColor="#807DE7"
-        rippleContainerBorderRadius={10}
         onPress={() => {
           onPressToFocus ? textInputRef.focus() : onPress();
         }}

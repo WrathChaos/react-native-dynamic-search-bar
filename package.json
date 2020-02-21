@@ -25,6 +25,17 @@
   "repository": "git@github.com:WrathChaos/react-native-dynamic-search-bar.git",
   "author": "Kuray (FreakyCoder) <kurayogun@gmail.com>",
   "license": "MIT",
+  "scripts": {
+    "build": "cd lib && tsc && cp ../package.json ../build/dist/ && Echo Build completed!",
+    "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
+    "lint": "tslint -p tsconfig.json",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm test && npm run lint",
+    "preversion": "npm run lint",
+    "version": "npm run format && git add -A src",
+    "postversion": "git push && git push --tags",
+    "publish": "npm publish --access public && echo Package published!"
+  },
   "peerDependencies": {
     "react": ">= 16.x.x",
     "react-native": ">= 0.55.x",
@@ -37,5 +48,8 @@
     "@types/react-native": "^0.60.28",
     "react-native-typescript-transformer": "^1.2.13",
     "typescript": "^3.7.4"
+  },
+  "dependencies": {
+    "@freakycoder/react-native-helpers": "^0.1.2"
   }
 }
