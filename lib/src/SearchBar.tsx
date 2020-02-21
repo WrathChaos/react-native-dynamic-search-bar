@@ -9,13 +9,42 @@ import styles, {
   textInputStyle,
   ifIPhoneXHeader
 } from "./SearchBar.style";
-import SearchIcon from "./components/SearchIcon";
-import SearchCancel from "./components/SearchCancel";
-import SearchTextInput from "./components/SearchTextInput";
+import SearchIcon from "./components/SearchIcon/SearchIcon";
+import SearchCancel from "./components/SearchCancel/SearchCancel";
+import SearchTextInput from "./components/SearchTextInput/SearchTextInput";
+
+interface IProps {
+  fontSize: number;
+  iconName: string;
+  iconType: string;
+  iconSize: number;
+  onPress: Function;
+  iconColor: string;
+  fontColor: string;
+  autoFocus: boolean;
+  iconComponent: any;
+  shadowColor: string;
+  placeholder: string;
+  textInputValue: any;
+  cancelComponent: any;
+  noExtraMargin: boolean;
+  cancelIconName: string;
+  cancelIconType: string;
+  cancelIconSize: number;
+  onPressCancel: Function;
+  cancelIconColor: string;
+  textInputComponent: any;
+  onPressToFocus: Function;
+  cancelIconComponent: any;
+  textInputDisable: boolean;
+  cancelButtonDisable: boolean;
+}
+
+interface IState {}
 
 let textInputRef = null;
 
-export default class SearchBar extends Component {
+export default class SearchBar extends Component<IProps, IState> {
   render() {
     const {
       onPress,
@@ -28,9 +57,9 @@ export default class SearchBar extends Component {
       autoFocus,
       shadowColor,
       placeholder,
-      onChangeText,
       onPressCancel,
       iconComponent,
+      noExtraMargin,
       onPressToFocus,
       textInputValue,
       cancelIconName,
@@ -41,24 +70,22 @@ export default class SearchBar extends Component {
       textInputDisable,
       textInputComponent,
       cancelIconComponent,
-      cancelButtonDisable,
-      onSubmitEditing,
-      noExtraMargin
+      cancelButtonDisable
     } = this.props;
 
     return (
       <TouchableOpacity
+        rippleColor="#807DE7"
+        rippleContainerBorderRadius={10}
+        onPress={() => {
+          onPressToFocus ? textInputRef.focus() : onPress();
+        }}
         style={[
           styles.center,
           container(this.props),
           ifIPhoneXHeader(noExtraMargin),
           _shadowStyle(shadowColor)
         ]}
-        onPress={() => {
-          onPressToFocus ? textInputRef.focus() : onPress();
-        }}
-        rippleColor="#807DE7"
-        rippleContainerBorderRadius={10}
       >
         <View style={styles.containerGlue}>
           <View style={styles.searchStyle}>
@@ -79,15 +106,15 @@ export default class SearchBar extends Component {
                 (!textInputDisable && (
                   <View style={styles.textInputContainer}>
                     <TextInput
-                      ref={c => {
-                        this.textInput = c;
-                        textInputRef = c;
-                      }}
                       autoFocus={autoFocus}
                       value={textInputValue}
                       placeholder={placeholder}
                       placeholderTextColor={fontColor}
                       style={[textInputStyle(fontSize, fontColor)]}
+                      ref={c => {
+                        this.textInput = c;
+                        textInputRef = c;
+                      }}
                       {...this.props}
                     />
                   </View>
@@ -100,7 +127,9 @@ export default class SearchBar extends Component {
             cancelIconType={cancelIconType}
             cancelIconSize={cancelIconSize}
             cancelIconColor={cancelIconColor}
+            cancelComponent={cancelComponent}
             cancelIconComponent={cancelIconComponent}
+            cancelButtonDisable={cancelButtonDisable}
             onPressCancel={() => {
               if (onPressCancel) {
                 if (this.textInput) this.textInput.clear();
@@ -109,8 +138,6 @@ export default class SearchBar extends Component {
                 if (this.textInput) this.textInput.clear();
               }
             }}
-            cancelComponent={cancelComponent}
-            cancelButtonDisable={cancelButtonDisable}
           />
         </View>
       </TouchableOpacity>

@@ -1,23 +1,38 @@
-import { Platform } from "react-native";
+import { Platform, ViewStyle, StyleSheet } from "react-native";
 import {
   ScreenWidth,
   isIPhoneXFamily
 } from "@freakycoder/react-native-helpers";
 
+interface Style {
+  center: ViewStyle;
+  searchStyle: ViewStyle;
+  containerGlue: ViewStyle;
+  textInputContainer: ViewStyle;
+}
+
 export function container(props) {
-  const { height, width, backgroundColor, borderRadius } = props;
+  const {
+    height = 35,
+    width = ScreenWidth * 0.93,
+    backgroundColor = "#fff",
+    borderRadius = 10
+  } = props;
 
   return {
+    width: width,
+    height: height,
+    borderRadius,
+    backgroundColor,
     paddingLeft: 8,
-    paddingRight: 8,
-    height: height || 35,
-    borderRadius: borderRadius || 10,
-    backgroundColor: backgroundColor || "#fff",
-    width: width || ScreenWidth * 0.93
+    paddingRight: 8
   };
 }
 
-export function textInputStyle(fontSize, fontColor) {
+export function textInputStyle(
+  fontSize: number = 13,
+  fontColor: string = "#b3b6c3"
+) {
   return {
     ...Platform.select({
       android: {
@@ -30,19 +45,19 @@ export function textInputStyle(fontSize, fontColor) {
       }
     }),
     marginLeft: 24,
-    width: ScreenWidth * 0.7,
-    fontSize: fontSize || 13,
-    color: fontColor || "#b3b6c3"
+    color: fontColor,
+    fontSize: fontSize,
+    width: ScreenWidth * 0.7
   };
 }
 
-export function _shadowStyle(shadowColor) {
+export function _shadowStyle(shadowColor: string = "#757575") {
   return {
     ...Platform.select({
       ios: {
+        shadowColor,
         shadowRadius: 5,
         shadowOpacity: 0.3,
-        shadowColor: shadowColor || "#757575",
         shadowOffset: { width: 2, height: 1 }
       },
       android: { elevation: 5 }
@@ -50,14 +65,14 @@ export function _shadowStyle(shadowColor) {
   };
 }
 
-export function ifIPhoneXHeader(noExtraMargin) {
+export function ifIPhoneXHeader(noExtraMargin: bool) {
   if (noExtraMargin) return { marginTop: 16 };
   return {
     marginTop: isIPhoneXFamily() ? 44 : 16
   };
 }
 
-export default {
+export default StyleSheet.create<Style>({
   containerGlue: {
     flex: 1,
     flexDirection: "row",
@@ -77,4 +92,4 @@ export default {
     alignSelf: "center",
     alignContent: "center"
   }
-};
+});

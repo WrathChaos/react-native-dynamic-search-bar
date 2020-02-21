@@ -31,5 +31,11 @@
     "react-native-vector-icons": ">= 6.x.x",
     "react-native-dynamic-vector-icons": ">= x.x.x",
     "@freakycoder/react-native-helpers": ">= 0.1.0"
+  },
+  "devDependencies": {
+    "@types/react": "^16.9.17",
+    "@types/react-native": "^0.60.28",
+    "react-native-typescript-transformer": "^1.2.13",
+    "typescript": "^3.7.4"
   }
 }

@@ -3,9 +3,19 @@ import { Text, View } from "react-native";
 /**
  * ? Local Imports
  */
-import styles, { textStyle } from "./styles/SearchTextInput.style";
+import styles, { textStyle } from "./SearchTextInput.style";
 
-export default class SearchTextInput extends Component {
+interface IProps {
+  fontSize: number;
+  fontColor: string;
+  placeholder: string;
+  textInputComponent: any;
+  textInputDisable: boolean;
+}
+
+interface IState {}
+
+export default class SearchTextInput extends Component<IProps, IState> {
   renderContent(props) {
     const { fontSize, fontColor, placeholder, textInputDisable } = props;
     return (

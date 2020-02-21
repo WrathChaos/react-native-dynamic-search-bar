@@ -4,9 +4,29 @@ import Icon from "react-native-dynamic-vector-icons";
 /**
  * ? Local Imports
  */
-import styles from "./styles/SearchCancel.style";
+import styles from "./SearchCancel.style";
 
-export default class SearchCancel extends React.PureComponent {
+interface IProps {
+  onPressCancel: any;
+  cancelComponent: any;
+  cancelIconName: string;
+  cancelIconType: string;
+  cancelIconSize: number;
+  cancelIconColor: string;
+  cancelIconComponent: any;
+  cancelButtonDisable: boolean;
+}
+
+interface IState {}
+
+export default class SearchCancel extends React.PureComponent<IProps, IState> {
+  public static defaultProps = {
+    cancelIconName: "clear",
+    cancelIconType: "MaterialIcons",
+    cancelIconSize: 23,
+    cancelIconColor: "#b3b6c3"
+  };
+
   renderIcon(props) {
     const {
       onPressCancel,
@@ -17,15 +37,16 @@ export default class SearchCancel extends React.PureComponent {
       cancelIconComponent,
       cancelButtonDisable
     } = props;
+
     return (
       !cancelButtonDisable && (
         <TouchableOpacity onPress={onPressCancel} style={styles.iconContainer}>
           {cancelIconComponent || (
             <Icon
-              name={cancelIconName || "clear"}
-              type={cancelIconType || "MaterialIcons"}
-              size={cancelIconSize || 23}
-              color={cancelIconColor || "#b3b6c3"}
+              name={cancelIconName}
+              type={cancelIconType}
+              size={cancelIconSize}
+              color={cancelIconColor}
             />
           )}
         </TouchableOpacity>
