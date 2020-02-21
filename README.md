@@ -175,7 +175,7 @@ constructor() {
 
 - [x] ~~LICENSE~~
 - [x] ~~Write an article about the lib on Medium~~
-- [ ] Typescript Challenge!
+- [x] ~~Typescript Challenge!~~
 
 # Change Log
 
