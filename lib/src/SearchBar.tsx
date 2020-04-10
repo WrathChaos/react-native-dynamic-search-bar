@@ -44,7 +44,7 @@ interface IState {}
 
 let textInputRef: any = null;
 
-export default class SearchBar extends Component<IProps, IState> {
+export default class SearchBar extends React.Component<IProps, IState> {
   textInput: any = null;
   render() {
     const {
