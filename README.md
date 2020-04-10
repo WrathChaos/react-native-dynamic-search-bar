@@ -72,7 +72,7 @@ There are two modes in the library:
 ```jsx
 <SearchBar
   placeholder="Search here"
-  onChangeText={text => {
+  onChangeText={(text) => {
     console.log(text);
   }}
   onPressCancel={() => {
@@ -94,7 +94,7 @@ You can check the example for the advanced usage
   cancelIconColor="#c6c6c6"
   backgroundColor="#353d5e"
   placeholder="Search here"
-  onChangeText={text => {
+  onChangeText={(text) => {
     this.filterList(text);
   }}
   onPressCancel={() => {
@@ -122,6 +122,8 @@ You can check the example for the advanced usage
 | textInputDisable    |  boolean  |       false       | disable the text input, and Text component will be available instead                                  |
 | textInputComponent  | component | Text OR TextInput | set your own component instead of Text OR TextInput for the center component                          |
 | textInputValue      |  string   |       value       | set the value of the text input                                                                       |
+| backgroundColor     |   color   |      default      | change the background color of the search bar                                                         |
+| fontFamily          |  string   |     undefined     | set the font family for the text input in the search bar                                              |
 | onChangeText        | function  |     function      | set your own function for the onChangeText logic                                                      |
 | cancelIconName      |  string   |       clear       | change the cancel icon                                                                                |
 | cancelIconType      |  string   |   MaterialIcons   | change the cancel icon style                                                                          |
