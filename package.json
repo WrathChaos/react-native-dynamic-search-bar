@@ -1,6 +1,6 @@
 {
   "name": "react-native-dynamic-search-bar",
-  "version": "1.0.0-rc.6",
+  "version": "1.0.0-rc.7",
   "description": "Fully customizable and dynamic Search Bar for React Native.",
   "keywords": [
     "gradient",
@@ -26,7 +26,7 @@
   "author": "Kuray (FreakyCoder) <kurayogun@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "build": "cd lib && tsc && Echo Build completed!",
+    "build": "cd lib && tsc && cp ../package.json ../build/dist/ && Echo Build completed!",
     "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
     "lint": "tslint -p tsconfig.json",
     "version": "npm run format && git add -A src",
