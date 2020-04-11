@@ -115,7 +115,7 @@ export default class App extends Component {
             shadowColor="#282828"
             cancelIconColor="#c6c6c6"
             backgroundColor="#353d5e"
-            placeholder="Search here"
+            placeholder="Search "
             onChangeText={text => {
               this.filterList(text);
             }}

@@ -1,4 +1,4 @@
-import React from "react";
+import * as React from "react";
 import { TouchableOpacity, View } from "react-native";
 import Icon from "react-native-dynamic-vector-icons";
 /**
@@ -24,7 +24,7 @@ export default class SearchCancel extends React.PureComponent<IProps, IState> {
     cancelIconName: "clear",
     cancelIconType: "MaterialIcons",
     cancelIconSize: 23,
-    cancelIconColor: "#b3b6c3"
+    cancelIconColor: "#b3b6c3",
   };
 
   renderIcon(props) {
@@ -35,7 +35,7 @@ export default class SearchCancel extends React.PureComponent<IProps, IState> {
       cancelIconSize,
       cancelIconColor,
       cancelIconComponent,
-      cancelButtonDisable
+      cancelButtonDisable,
     } = props;
 
     return (

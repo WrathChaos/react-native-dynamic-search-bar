@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import * as React from "react";
 import { Text, View } from "react-native";
 /**
  * ? Local Imports
@@ -15,7 +15,7 @@ interface IProps {
 
 interface IState {}
 
-export default class SearchTextInput extends Component<IProps, IState> {
+export default class SearchTextInput extends React.Component<IProps, IState> {
   renderContent(props) {
     const { fontSize, fontColor, placeholder, textInputDisable } = props;
     return (

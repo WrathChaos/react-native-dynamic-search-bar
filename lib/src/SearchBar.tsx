@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import * as React from "react";
 import { View, TextInput, TouchableOpacity } from "react-native";
 /**
  * ? Local Imports
@@ -7,7 +7,7 @@ import styles, {
   container,
   _shadowStyle,
   textInputStyle,
-  ifIPhoneXHeader
+  ifIPhoneXHeader,
 } from "./SearchBar.style";
 import SearchIcon from "./components/SearchIcon/SearchIcon";
 import SearchCancel from "./components/SearchCancel/SearchCancel";
@@ -71,7 +71,7 @@ export default class SearchBar extends React.Component<IProps, IState> {
       textInputDisable,
       textInputComponent,
       cancelIconComponent,
-      cancelButtonDisable
+      cancelButtonDisable,
     } = this.props;
 
     return (
@@ -83,7 +83,7 @@ export default class SearchBar extends React.Component<IProps, IState> {
           styles.center,
           container(this.props),
           ifIPhoneXHeader(noExtraMargin),
-          _shadowStyle(shadowColor)
+          _shadowStyle(shadowColor),
         ]}
       >
         <View style={styles.containerGlue}>
@@ -110,7 +110,7 @@ export default class SearchBar extends React.Component<IProps, IState> {
                       placeholder={placeholder}
                       placeholderTextColor={fontColor}
                       style={[textInputStyle(fontSize, fontColor)]}
-                      ref={c => {
+                      ref={(c) => {
                         this.textInput = c;
                         textInputRef = c;
                       }}

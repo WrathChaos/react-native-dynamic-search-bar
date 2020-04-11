@@ -1,4 +1,4 @@
-import React from "react";
+import * as React from "react";
 import { View } from "react-native";
 import Icon from "react-native-dynamic-vector-icons";
 /**
@@ -21,7 +21,7 @@ export default class SearchIcon extends React.PureComponent<IProps, IState> {
     iconName: "search",
     iconType: "Octicons",
     iconSize: 20,
-    iconColor: "#807DE7"
+    iconColor: "#807DE7",
   };
 
   render() {
@@ -30,7 +30,7 @@ export default class SearchIcon extends React.PureComponent<IProps, IState> {
       iconType,
       iconSize,
       iconColor,
-      iconComponent
+      iconComponent,
     } = this.props;
 
     return (
