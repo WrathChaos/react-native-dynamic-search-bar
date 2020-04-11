@@ -1,6 +1,6 @@
 {
   "name": "react-native-dynamic-search-bar",
-  "version": "1.0.0-rc.8",
+  "version": "1.0.0",
   "description": "Fully customizable and dynamic Search Bar for React Native.",
   "keywords": [
     "gradient",
@@ -21,7 +21,7 @@
   ],
   "homepage": "https://www.freakycoder.com",
   "bugs": "https://github.com/WrathChaos/react-native-dynamic-search-bar/issues",
-  "main": "build/dist/SearchBar.js",
+  "main": "./build/dist/SearchBar.js",
   "repository": "git@github.com:WrathChaos/react-native-dynamic-search-bar.git",
   "author": "Kuray (FreakyCoder) <kurayogun@gmail.com>",
   "license": "MIT",
@@ -48,6 +48,7 @@
   "dependencies": {
     "react": "16.9.0",
     "react-native": "0.61.5",
+    "react-native-vector-icons": ">= 6.x.x",
     "@freakycoder/react-native-helpers": "^0.1.2",
     "react-native-dynamic-vector-icons": "^0.2.2"
   }
