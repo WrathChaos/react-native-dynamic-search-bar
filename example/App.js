@@ -123,6 +123,7 @@ export default class App extends Component {
               this.filterList("");
             }}
             onPress={() => alert("onPress")}
+            onKeyPress={() => alert("onKeyPress")}
           />
           <View style={styles.flatListStyle}>
             <FlatList
