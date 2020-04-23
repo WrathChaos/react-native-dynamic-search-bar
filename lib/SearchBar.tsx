@@ -18,6 +18,7 @@ interface IProps {
   iconName: string;
   iconType: string;
   iconSize: number;
+  shadowStyle: any;
   onPress: Function;
   iconColor: string;
   fontColor: string;
@@ -58,6 +59,7 @@ export default class SearchBar extends React.Component<IProps, IState> {
       autoFocus,
       shadowColor,
       placeholder,
+      shadowStyle,
       onPressCancel,
       iconComponent,
       noExtraMargin,
@@ -76,15 +78,15 @@ export default class SearchBar extends React.Component<IProps, IState> {
 
     return (
       <TouchableOpacity
-        onPress={() => {
-          onPressToFocus ? textInputRef.focus() : onPress();
-        }}
         style={[
           styles.center,
           container(this.props),
           ifIPhoneXHeader(noExtraMargin),
-          _shadowStyle(shadowColor),
+          shadowStyle || _shadowStyle(shadowColor),
         ]}
+        onPress={() => {
+          onPressToFocus ? textInputRef.focus() : onPress();
+        }}
       >
         <View style={styles.containerGlue}>
           <View style={styles.searchStyle}>
