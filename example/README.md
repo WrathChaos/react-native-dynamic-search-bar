@@ -1,5 +1,9 @@
 # React Native Dynamic Search Bar Example
 
+<img alt="React Native Dynamic Search Bar" src="../assets/RN-Dynamic-SearchBar-iOS-Android-Emulators.png" width="960"/>
+
+Considering that you already have the react-native setup working in your machine - ios/android emulator, nodejs, react-scripts - , just follow those simple steps.
+
 ## To run on MacOS iPhone Simulator
 
 To run this example, first install the dependencies:
@@ -46,3 +50,28 @@ pod install
 ```
 
 Then try again `npm run ios`
+
+
+## To run on Android Emulator
+
+To run this example, first install the dependencies:
+
+```
+yarn install
+```
+or
+```
+npm install
+```
+
+And then run:
+
+```
+npx react-native start
+yarn run android
+```
+or
+```
+npx react-native start
+npm run android
+```
