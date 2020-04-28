@@ -40,6 +40,7 @@ or
 Try running on the **ios** folder:
 
 ```
+cd ios
 pod update
 pod install
 ```
