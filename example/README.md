@@ -1,8 +1,8 @@
 # React Native Dynamic Search Bar Example
 
-<img alt="React Native Dynamic Search Bar" src="../assets/RN-Dynamic-SearchBar-iOS-Android-Emulators.png" width="960"/>
+<img alt="React Native Dynamic Search Bar" src="../assets/Screenshots/RN-Dynamic-SearchBar-iOS-Android-Emulators.png" width="960"/>
 
-Considering that you already have the react-native setup working in your machine - ios/android emulator, nodejs, react-scripts - , just follow those simple steps.
+Considering that you already have the react-native setup working in your machine (ios/android emulator, nodejs, react-scripts, etc), just follow those simple steps above.
 
 ## To run on MacOS iPhone Simulator
 
