@@ -178,7 +178,7 @@ constructor() {
 - [x] ~~LICENSE~~
 - [x] ~~Write an article about the lib on Medium~~
 - [x] ~~Typescript Challenge!~~
-- [ ] Update the Expo version to latest features
+- [x] ~~Update the Expo version to latest features~~
 
 # Changelog
 
