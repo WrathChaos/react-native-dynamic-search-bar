@@ -42,9 +42,9 @@ interface IProps {
   cancelButtonDisable: boolean;
 
   spinnerType: any;
+  spinnerStyle: any;
   spinnerSize: number;
   spinnerColor: string;
-  spinnerStyle: any;
   spinnerVisibility: boolean;
 }
 
@@ -122,7 +122,6 @@ export default class SearchBar extends React.Component<IProps, IState> {
                   type={spinnerType}
                   size={spinnerSize}
                   color={spinnerColor}
-                  style={spinnerStyle}
                   {...this.props}
                 />
               </View>
