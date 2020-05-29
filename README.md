@@ -21,6 +21,11 @@
 <img alt="React Native Dynamic Search Bar" src="assets/Screenshots/RN-Dynamic-SearchBar.png" height="800" />
 </p>
 
+<h1 align="center"> Built-in Spinner </h1>
+<p align="center">
+<img alt="React Native Dynamic Search Bar" src="assets/Screenshots/RN-Dynamic-Search-Bar-Spinner.gif" />
+</p>
+
 ## Installation
 
 Add the dependency:
@@ -45,9 +50,10 @@ npm i WrathChaos/react-native-dynamic-vector-icons#expo
 ```js
 "react": ">= 16.x.x",
 "react-native": ">= 0.55.x",
+"react-native-spinkit": ">= 1.5.0",
 "react-native-vector-icons": ">= 6.x.x",
 "react-native-dynamic-vector-icons": ">= x.x.x",
-"@freakycoder/react-native-helpers": ">= 0.1.0"
+"@freakycoder/react-native-helpers": ">= 0.1.0",
 ```
 
 # Usage
@@ -104,6 +110,54 @@ You can check the example for the advanced usage
 />
 ```
 
+## Advanced Built-in Spinner Usage
+
+You can check the example for the advanced built-in spinner usage
+
+```js
+import React, { Component } from "react";
+import { View } from "react-native";
+import SearchBar from "react-native-dynamic-search-bar";
+
+export default class Test extends Component {
+  handleOnChangeText = (text) => {
+    // ? Visible the spinner
+    this.setState({
+      searchText: text,
+      spinnerVisibility: true,
+    });
+
+    // ? After you've done to implement your use-case
+    // ? Do not forget to set false to spinner's visibility
+    this.setState({
+      spinnerVisibility: false,
+    });
+  };
+
+  render() {
+    const { spinnerVisibility } = this.state;
+    return (
+      <View>
+        <SearchBar
+          height={50}
+          fontSize={24}
+          fontColor="#fdfdfd"
+          iconColor="#fdfdfd"
+          shadowColor="#282828"
+          cancelIconColor="#fdfdfd"
+          backgroundColor="#ba312f"
+          spinnerVisibility={spinnerVisibility}
+          placeholder="Search any cosmetics ..."
+          fontFamily="BurbankBigCondensed-Black"
+          shadowStyle={styles.searchBarShadowStyle}
+          onChangeText={this.handleOnChangeText}
+        />
+      </View>
+    );
+  }
+}
+```
+
 ### Configuration - Props
 
 | Property            |   Type    |      Default      | Description                                                                                           |
@@ -136,6 +190,10 @@ You can check the example for the advanced usage
 | autoFocus           |  boolean  |       true        | change the autoFocus mode for the TextInput                                                           |
 | noExtraMargin       |  boolean  |       false       | remove extra padding on iPhone X devices                                                              |
 | onPressToFocus      |  boolean  |       false       | when enable it, onPress will automatically focus on the TextInput and opens the soft virtual keyboard |
+| spinnerType         |  string   |      Circle       | change the spinner type                                                                               |
+| spinnerSize         |  number   |      default      | change the spinner size                                                                               |
+| spinnerColor        |   color   |      #fdfdfd      | change the spinner color                                                                              |
+| spinnerVisibility   |  boolean  |       false       | change the spinner visibility                                                                         |
 
 ## Expo Compatibility
 
@@ -184,10 +242,10 @@ constructor() {
 
 ## [1.0.1](https://github.com/WrathChaos/react-native-dynamic-search-bar/tree/1.0.1) (2020-04-11)
 
-* Typescript 😍 
-* Fully refactored the code base 😇
-* Finally version 1.0 🥳
-* README is updated with new screenshots
+- Typescript 😍
+- Fully refactored the code base 😇
+- Finally version 1.0 🥳
+- README is updated with new screenshots
 
 [Full Changelog](https://github.com/WrathChaos/react-native-dynamic-search-bar/releases/tag/1.0.1)
 
@@ -198,7 +256,7 @@ constructor() {
 **Closed issues:**
 
 - Missing backgroundColor and fontFamily from configuration props [\#22](https://github.com/WrathChaos/react-native-dynamic-search-bar/issues/22)
-- Module not found: Can't resolve '@expo/vector-icons/Fontisto'  [\#19](https://github.com/WrathChaos/react-native-dynamic-search-bar/issues/19)
+- Module not found: Can't resolve '@expo/vector-icons/Fontisto' [\#19](https://github.com/WrathChaos/react-native-dynamic-search-bar/issues/19)
 - Expo install method is not working [\#18](https://github.com/WrathChaos/react-native-dynamic-search-bar/issues/18)
 
 **Merged pull requests:**
@@ -214,7 +272,7 @@ constructor() {
 
 **Closed issues:**
 
-- How do you style the actual searchBar, I want to increase the height of the search bar. I don't see a prop like containerStyle  [\#12](https://github.com/WrathChaos/react-native-dynamic-search-bar/issues/12)
+- How do you style the actual searchBar, I want to increase the height of the search bar. I don't see a prop like containerStyle [\#12](https://github.com/WrathChaos/react-native-dynamic-search-bar/issues/12)
 - react-native-iphone-x-helper module not found [\#8](https://github.com/WrathChaos/react-native-dynamic-search-bar/issues/8)
 
 ## [0.3.0](https://github.com/WrathChaos/react-native-dynamic-search-bar/tree/0.3.0) (2019-12-06)
@@ -272,9 +330,7 @@ constructor() {
 
 [Full Changelog](https://github.com/WrathChaos/react-native-dynamic-search-bar/compare/53f0e9276ddb6a7edf52c5c70918b51d4c6f36b1...0.0.1)
 
-
-\* *This Changelog was automatically generated by [github_changelog_generator](https://github.com/github-changelog-generator/github-changelog-generator)*
-
+\* _This Changelog was automatically generated by [github_changelog_generator](https://github.com/github-changelog-generator/github-changelog-generator)_
 
 ## Author
 
