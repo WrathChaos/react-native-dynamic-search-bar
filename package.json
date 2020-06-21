@@ -1,6 +1,6 @@
 {
   "name": "react-native-dynamic-search-bar",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Fully customizable and dynamic Search Bar for React Native.",
   "keywords": [
     "gradient",
@@ -45,13 +45,5 @@
     "@types/react-native": "^0.63.0",
     "react-native-typescript-transformer": "^1.2.13",
     "typescript": "^3.7.4"
-  },
-  "dependencies": {
-    "@freakycoder/react-native-helpers": "^0.1.2",
-    "react": "16.9.0",
-    "react-native": "0.61.5",
-    "react-native-spinkit": "^1.5.0",
-    "react-native-vector-icons": "^7.0.0",
-    "react-native-dynamic-vector-icons": "^1.0.0"
   }
 }
