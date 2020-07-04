@@ -160,40 +160,43 @@ export default class Test extends Component {
 
 ### Configuration - Props
 
-| Property            |   Type    |      Default      | Description                                                                                           |
-| ------------------- | :-------: | :---------------: | ----------------------------------------------------------------------------------------------------- |
-| onPress             | function  |     function      | set your own function for the onPress functionality                                                   |
-| fontSize            |  number   |        13         | change the font size                                                                                  |
-| fontColor           |   color   |      #b3b6c3      | change the font color                                                                                 |
-| iconName            |  string   |      search       | change the icon                                                                                       |
-| iconType            |  string   |     Octicons      | change the icon style                                                                                 |
-| iconSize            |  number   |        20         | change the icon size                                                                                  |
-| iconColor           |   color   |      #807DE7      | change the icon color                                                                                 |
-| iconComponent       | component |       Icon        | set your own component instead of Icon                                                                |
-| shadowColor         |   color   |      #757575      | change the shadow color                                                                               |
-| shadowStyle         |   style   |   shadow style    | set your own shadow style                                                                             |
-| placeholder         |  string   |       null        | set your own placeholder string                                                                       |
-| textInputDisable    |  boolean  |       false       | disable the text input, and Text component will be available instead                                  |
-| textInputComponent  | component | Text OR TextInput | set your own component instead of Text OR TextInput for the center component                          |
-| textInputValue      |  string   |       value       | set the value of the text input                                                                       |
-| backgroundColor     |   color   |      default      | change the background color of the search bar                                                         |
-| fontFamily          |  string   |     undefined     | set the font family for the text input in the search bar                                              |
-| onChangeText        | function  |     function      | set your own function for the onChangeText logic                                                      |
-| cancelIconName      |  string   |       clear       | change the cancel icon                                                                                |
-| cancelIconType      |  string   |   MaterialIcons   | change the cancel icon style                                                                          |
-| cancelIconSize      |  number   |        23         | change the cancel icon size                                                                           |
-| cancelIconColor     |   color   |      #b3b6c3      | change the cancel icon color                                                                          |
-| cancelIconComponent | component |       Icon        | set your own component instead of Icon for the cancel component (right component)                     |
-| onPressCancel       | function  |     function      | set your own function for the cancel button's onPress functionality                                   |
-| cancelComponent     | component |     component     | set your own component instead of cancel component                                                    |
-| cancelButtonDisable |  boolean  |       false       | disable cancel button component                                                                       |
-| autoFocus           |  boolean  |       true        | change the autoFocus mode for the TextInput                                                           |
-| noExtraMargin       |  boolean  |       false       | remove extra padding on iPhone X devices                                                              |
-| onPressToFocus      |  boolean  |       false       | when enable it, onPress will automatically focus on the TextInput and opens the soft virtual keyboard |
-| spinnerType         |  string   |      Circle       | change the spinner type                                                                               |
-| spinnerSize         |  number   |      default      | change the spinner size                                                                               |
-| spinnerColor        |   color   |      #fdfdfd      | change the spinner color                                                                              |
-| spinnerVisibility   |  boolean  |       false       | change the spinner visibility                                                                         |
+| Property            |   Type                     |      Default      | Description                                                                                           |
+| ------------------- | :-------:                  | :---------------: | ----------------------------------------------------------------------------------------------------- |
+| autoFocus           |  boolean                                    |       true        | change the autoFocus mode for the TextInput                                                           |
+| backgroundColor     |   color                    |       #fff        | change the background color of the search bar                                                         |
+| borderRadius        |            number          |        10         | change the border radius of the search bar
+| cancelButtonDisable |  boolean                   |       false       | disable cancel button component                                                                       |
+| cancelComponent     | component                  |     component     | set your own component instead of cancel component                                                    |
+| cancelIconColor     |   color                    |      #b3b6c3      | change the cancel icon color                                                                          |
+| cancelIconComponent | component                  |       Icon        | set your own component instead of Icon for the cancel component (right component)                     |
+| cancelIconName      |  string                    |       clear       | change the cancel icon                                                                                |
+| cancelIconSize      |  number                    |        23         | change the cancel icon size                                                                           |
+| cancelIconType      |  string                    |   MaterialIcons   | change the cancel icon style                                                                          |
+| fontColor           |   color                    |      #b3b6c3      | change the font color                                                                                 |
+| fontFamily          |  string                    |     undefined     | set the font family for the text input in the search bar                                              |
+| fontSize            |  number                    |        13         | change the font size                                                                                  |
+| height              |   string / number          |       35          | change the height of the search bar
+| iconColor           |   color                    |      #807DE7      | change the icon color                                                                                 |
+| iconComponent       | component                  |       Icon        | set your own component instead of Icon                                                                |
+| iconName            |  string                    |      search       | change the icon                                                                                       |
+| iconSize            |  number                    |        20         | change the icon size                                                                                  |
+| iconType            |  string                    |     Octicons      | change the icon style                                                                                 |
+| noExtraMargin       |  boolean                   |       false       | remove extra padding on iPhone X devices                                                              |
+| onChangeText        | function                   |     function      | set your own function for the onChangeText logic                                                      |
+| onPress             | function                   |     function      | set your own function for the onPress functionality                                                   |
+| onPressCancel       | function                   |     function      | set your own function for the cancel button's onPress functionality                                   |
+| onPressToFocus      |  boolean                   |       false       | when enable it, onPress will automatically focus on the TextInput and opens the soft virtual keyboard |
+| placeholder         |  string                    |       null        | set your own placeholder string                                                                       |
+| shadowColor         |   color                    |      #757575      | change the shadow color                                                                               |
+| shadowStyle         |   style                    |   shadow style    | set your own shadow style                                                                             |
+| spinnerColor        |   color                    |      #fdfdfd      | change the spinner color                                                                              |
+| spinnerSize         |  number                    |      default      | change the spinner size                                                                               |
+| spinnerType         |  string                    |      Circle       | change the spinner type                                                                               |
+| spinnerVisibility   |  boolean                   |       false       | change the spinner visibility                                                                         |
+| textInputComponent  | component                  | Text OR TextInput | set your own component instead of Text OR TextInput for the center component                          |
+| textInputDisable    |  boolean                   |       false       | disable the text input, and Text component will be available instead                                  |
+| textInputValue      |  string                    |       value       | set the value of the text input                                                                       |
+| width               |     string / number        | ScreenWidth*0.93  | change the width of the search bar
 
 ## Expo Compatibility
 
