@@ -15,31 +15,32 @@ import SearchCancel from "./components/SearchCancel/SearchCancel";
 import SearchTextInput from "./components/SearchTextInput/SearchTextInput";
 
 interface IProps {
-  fontSize: number;
-  iconName: string;
-  iconType: string;
-  iconSize: number;
-  shadowStyle: any;
-  onPress: Function;
-  iconColor: string;
-  fontColor: string;
   autoFocus: boolean;
-  iconComponent: any;
-  shadowColor: string;
-  placeholder: string;
-  textInputValue: any;
-  cancelComponent: any;
-  noExtraMargin: boolean;
-  cancelIconName: string;
-  cancelIconType: string;
-  cancelIconSize: number;
-  onPressCancel: Function;
-  cancelIconColor: string;
-  textInputComponent: any;
-  onPressToFocus: Function;
-  cancelIconComponent: any;
-  textInputDisable: boolean;
+  backgroundColor: string;
   cancelButtonDisable: boolean;
+  cancelComponent: any;
+  cancelIconColor: string;
+  cancelIconComponent: any;
+  cancelIconName: string;
+  cancelIconSize: number;
+  cancelIconType: string;
+  fontColor: string;
+  fontSize: number;
+  iconColor: string;
+  iconComponent: any;
+  iconName: string;
+  iconSize: number;
+  iconType: string;
+  noExtraMargin: boolean;
+  onPress: Function;
+  onPressCancel: Function;
+  onPressToFocus: Function;
+  placeholder: string;
+  shadowColor: string;
+  shadowStyle: any;
+  textInputComponent: any;
+  textInputDisable: boolean;
+  textInputValue: any;
 
   spinnerType: any;
   spinnerSize: number;
@@ -62,35 +63,36 @@ export default class SearchBar extends React.Component<IProps, IState> {
 
   render() {
     const {
-      spinnerType,
-      spinnerSize,
-      spinnerColor,
-      spinnerVisibility,
-      onPress,
-      fontSize,
-      iconName,
-      iconType,
-      iconSize,
-      iconColor,
-      fontColor,
       autoFocus,
-      shadowColor,
-      placeholder,
-      shadowStyle,
-      onPressCancel,
-      iconComponent,
-      noExtraMargin,
-      onPressToFocus,
-      textInputValue,
-      cancelIconName,
-      cancelIconType,
-      cancelIconSize,
-      cancelIconColor,
-      cancelComponent,
-      textInputDisable,
-      textInputComponent,
-      cancelIconComponent,
       cancelButtonDisable,
+      cancelComponent,
+      cancelIconColor,
+      cancelIconComponent,
+      cancelIconName,
+      cancelIconSize,
+      cancelIconType,
+      fontColor,
+      fontSize,
+      iconColor,
+      iconComponent,
+      iconName,
+      iconSize,
+      iconType,
+      noExtraMargin,
+      onPress,
+      onPressCancel,
+      onPressToFocus,
+      placeholder,
+      shadowColor,
+      shadowStyle,
+      textInputComponent,
+      textInputDisable,
+      textInputValue,
+      
+      spinnerColor,
+      spinnerSize,
+      spinnerType,
+      spinnerVisibility,
     } = this.props;
 
     return (
