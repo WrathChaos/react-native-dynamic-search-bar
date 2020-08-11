@@ -1,13 +1,79 @@
 # Changelog
 
+## [1.3.0](https://github.com/WrathChaos/react-native-dynamic-search-bar/tree/1.3.0) (2020-08-11)
+
+[Full Changelog](https://github.com/WrathChaos/react-native-dynamic-search-bar/compare/1.2.1...1.3.0)
+
+- Finally `height` and `width` props are working properly. 🔥
+- TextInput's `height` bug is fixed. (That ugly thing is finally fixed) 🥳
+- Better typescript refactoring is incoming with the next version ⏳
+
+**Closed issues:**
+
+- Just Doesn't Work And Contains NODE_MODULES [\#32](https://github.com/WrathChaos/react-native-dynamic-search-bar/issues/32)
+- Documentation: Missing Props [\#27](https://github.com/WrathChaos/react-native-dynamic-search-bar/issues/27)
+
+**Merged pull requests:**
+
+- Bump lodash from 4.17.15 to 4.17.19 in /example [\#36](https://github.com/WrathChaos/react-native-dynamic-search-bar/pull/36) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump @types/react-native from 0.62.18 to 0.63.0 [\#35](https://github.com/WrathChaos/react-native-dynamic-search-bar/pull/35) ([dependabot-preview[bot]](https://github.com/apps/dependabot-preview))
+- Bump react-native-vector-icons from 6.7.0 to 7.0.0 [\#34](https://github.com/WrathChaos/react-native-dynamic-search-bar/pull/34) ([dependabot-preview[bot]](https://github.com/apps/dependabot-preview))
+- feat: add documentation to missing properties of internal components that are [\#33](https://github.com/WrathChaos/react-native-dynamic-search-bar/pull/33) ([tiagostutz](https://github.com/tiagostutz))
+- Bump react-native-dynamic-vector-icons from 0.2.2 to 1.0.0 [\#31](https://github.com/WrathChaos/react-native-dynamic-search-bar/pull/31) ([dependabot-preview[bot]](https://github.com/apps/dependabot-preview))
+
+## [1.2.1](https://github.com/WrathChaos/react-native-dynamic-search-bar/tree/1.2.1) (2020-06-21)
+
+[Full Changelog](https://github.com/WrathChaos/react-native-dynamic-search-bar/compare/1.2.0...1.2.1)
+
+## [1.2.0](https://github.com/WrathChaos/react-native-dynamic-search-bar/tree/1.2.0) (2020-05-29)
+
+[Full Changelog](https://github.com/WrathChaos/react-native-dynamic-search-bar/compare/1.1.0...1.2.0)
+
+## [1.1.0](https://github.com/WrathChaos/react-native-dynamic-search-bar/tree/1.1.0) (2020-05-25)
+
+[Full Changelog](https://github.com/WrathChaos/react-native-dynamic-search-bar/compare/1.0.4...1.1.0)
+
+## [1.0.4](https://github.com/WrathChaos/react-native-dynamic-search-bar/tree/1.0.4) (2020-05-24)
+
+[Full Changelog](https://github.com/WrathChaos/react-native-dynamic-search-bar/compare/1.0.2...1.0.4)
+
+**Fixed bugs:**
+
+- shadowStyle prop is not passed through [\#26](https://github.com/WrathChaos/react-native-dynamic-search-bar/issues/26)
+
+**Closed issues:**
+
+- NPM error trying to install expo version [\#30](https://github.com/WrathChaos/react-native-dynamic-search-bar/issues/30)
+- Add instructions on how to run the Example [\#28](https://github.com/WrathChaos/react-native-dynamic-search-bar/issues/28)
+
+**Merged pull requests:**
+
+- Adds README with instructions on how to run the example [\#29](https://github.com/WrathChaos/react-native-dynamic-search-bar/pull/29) ([tiagostutz](https://github.com/tiagostutz))
+
+## [1.0.2](https://github.com/WrathChaos/react-native-dynamic-search-bar/tree/1.0.2) (2020-04-23)
+
+[Full Changelog](https://github.com/WrathChaos/react-native-dynamic-search-bar/compare/1.0.1...1.0.2)
+
+**Fixed bugs:**
+
+- Expo version is not found [\#25](https://github.com/WrathChaos/react-native-dynamic-search-bar/issues/25)
+
+**Merged pull requests:**
+
+- Bump @types/react-native from 0.60.31 to 0.62.2 [\#24](https://github.com/WrathChaos/react-native-dynamic-search-bar/pull/24) ([dependabot-preview[bot]](https://github.com/apps/dependabot-preview))
+
 ## [1.0.1](https://github.com/WrathChaos/react-native-dynamic-search-bar/tree/1.0.1) (2020-04-11)
 
-* Typescript 😍 
-* Fully refactored the code base 😇
-* Finally version 1.0 🥳
-* README is updated with new screenshots
+[Full Changelog](https://github.com/WrathChaos/react-native-dynamic-search-bar/compare/1.0.0...1.0.1)
 
-[Full Changelog](https://github.com/WrathChaos/react-native-dynamic-search-bar/releases/tag/1.0.1)
+- Typescript 😍
+- Fully refactored the code base 😇
+- Finally version 1.0 🥳
+- README is updated with new screenshots
+
+## [1.0.0](https://github.com/WrathChaos/react-native-dynamic-search-bar/tree/1.0.0) (2020-04-11)
+
+[Full Changelog](https://github.com/WrathChaos/react-native-dynamic-search-bar/compare/0.3.1...1.0.0)
 
 **Fixed bugs:**
 
@@ -16,7 +82,7 @@
 **Closed issues:**
 
 - Missing backgroundColor and fontFamily from configuration props [\#22](https://github.com/WrathChaos/react-native-dynamic-search-bar/issues/22)
-- Module not found: Can't resolve '@expo/vector-icons/Fontisto'  [\#19](https://github.com/WrathChaos/react-native-dynamic-search-bar/issues/19)
+- Module not found: Can't resolve '@expo/vector-icons/Fontisto' [\#19](https://github.com/WrathChaos/react-native-dynamic-search-bar/issues/19)
 - Expo install method is not working [\#18](https://github.com/WrathChaos/react-native-dynamic-search-bar/issues/18)
 
 **Merged pull requests:**
@@ -30,9 +96,13 @@
 
 [Full Changelog](https://github.com/WrathChaos/react-native-dynamic-search-bar/compare/0.3.0...0.3.1)
 
+**Implemented enhancements:**
+
+- Adding onSubmitEditing listener [\#14](https://github.com/WrathChaos/react-native-dynamic-search-bar/pull/14) ([abhishekdewan101](https://github.com/abhishekdewan101))
+
 **Closed issues:**
 
-- How do you style the actual searchBar, I want to increase the height of the search bar. I don't see a prop like containerStyle  [\#12](https://github.com/WrathChaos/react-native-dynamic-search-bar/issues/12)
+- How do you style the actual searchBar, I want to increase the height of the search bar. I don't see a prop like containerStyle [\#12](https://github.com/WrathChaos/react-native-dynamic-search-bar/issues/12)
 - react-native-iphone-x-helper module not found [\#8](https://github.com/WrathChaos/react-native-dynamic-search-bar/issues/8)
 
 ## [0.3.0](https://github.com/WrathChaos/react-native-dynamic-search-bar/tree/0.3.0) (2019-12-06)
@@ -90,6 +160,4 @@
 
 [Full Changelog](https://github.com/WrathChaos/react-native-dynamic-search-bar/compare/53f0e9276ddb6a7edf52c5c70918b51d4c6f36b1...0.0.1)
 
-
-
-\* *This Changelog was automatically generated by [github_changelog_generator](https://github.com/github-changelog-generator/github-changelog-generator)*
+\* _This Changelog was automatically generated by [github_changelog_generator](https://github.com/github-changelog-generator/github-changelog-generator)_
