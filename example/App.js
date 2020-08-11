@@ -9,9 +9,7 @@ import {
   LayoutAnimation,
 } from "react-native";
 import { LineChart } from "react-native-svg-charts";
-// import SearchBar from "react-native-dynamic-search-bar";
-import SearchBar from "./lib/SearchBar";
-
+import SearchBar from "react-native-dynamic-search-bar";
 import GradientCard from "react-native-gradient-card-view";
 import { ScreenWidth } from "@freakycoder/react-native-helpers";
 import { CustomLayoutSpring } from "react-native-animation-layout";
