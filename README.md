@@ -236,6 +236,7 @@ constructor() {
 
 ### Roadmap
 
+- [ ] Full code refactoring with better Typescript
 - [x] ~~LICENSE~~
 - [x] ~~Write an article about the lib on Medium~~
 - [x] ~~Typescript Challenge!~~
