@@ -1,6 +1,6 @@
 # Changelog
 
-## [1.3.0](https://github.com/WrathChaos/react-native-dynamic-search-bar/tree/1.3.0) (2020-08-11)
+## [1.3.1](https://github.com/WrathChaos/react-native-dynamic-search-bar/tree/1.3.0) (2020-08-11)
 
 [Full Changelog](https://github.com/WrathChaos/react-native-dynamic-search-bar/compare/1.2.1...1.3.0)
 
