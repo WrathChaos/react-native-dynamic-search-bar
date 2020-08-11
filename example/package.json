@@ -17,6 +17,7 @@
     "react-native-dynamic-search-bar": "1.0.3",
     "react-native-dynamic-vector-icons": "0.2.1",
     "react-native-fast-image": "^7.0.2",
+    "react-native-gesture-handler": "^1.7.0",
     "react-native-gradient-card-view": "0.1.0",
     "react-native-linear-gradient": "^2.5.6",
     "react-native-material-ripple": "^0.9.1",

@@ -110,15 +110,17 @@ export default class App extends Component {
         <StatusBar barStyle={"light-content"} />
         <View style={styles.container}>
           <SearchBar
-            spinnerVisibility={spinnerVisibility}
+            // width={300}
+            // height={50}
             onPressToFocus
             autoFocus={false}
             fontColor="#c6c6c6"
             iconColor="#c6c6c6"
+            placeholder="Search"
             shadowColor="#282828"
             cancelIconColor="#c6c6c6"
             backgroundColor="#353d5e"
-            placeholder="Search "
+            spinnerVisibility={spinnerVisibility}
             onChangeText={(text) => {
               if (text.length === 0)
                 this.setState({ spinnerVisibility: false });

@@ -26,29 +26,20 @@ interface IProps {
   iconColor: string;
   fontColor: string;
   autoFocus: boolean;
-  backgroundColor: string;
-  cancelButtonDisable: boolean;
-  cancelComponent: any;
-  cancelIconColor: string;
-  cancelIconComponent: any;
-  cancelIconName: string;
-  cancelIconSize: number;
-  cancelIconType: string;
-  fontColor: string;
-  fontSize: number;
-  iconColor: string;
   iconComponent: any;
-  iconName: string;
-  iconSize: number;
-  iconType: string;
-  noExtraMargin: boolean;
-  onPress: Function;
-  onPressCancel: Function;
-  onPressToFocus: Function;
-  placeholder: string;
   shadowColor: string;
-  shadowStyle: any;
+  placeholder: string;
+  textInputValue: any;
+  cancelComponent: any;
+  noExtraMargin: boolean;
+  cancelIconName: string;
+  cancelIconType: string;
+  cancelIconSize: number;
+  onPressCancel: Function;
+  cancelIconColor: string;
   textInputComponent: any;
+  onPressToFocus: Function;
+  cancelIconComponent: any;
   textInputDisable: boolean;
   cancelButtonDisable: boolean;
   spinnerType: any;
@@ -80,26 +71,29 @@ export default class SearchBar extends React.Component<IProps, IState> {
       spinnerVisibility,
       onPress,
       fontSize,
-      iconColor,
-      iconComponent,
       iconName,
-      iconSize,
       iconType,
-      noExtraMargin,
-      onPress,
-      onPressCancel,
-      onPressToFocus,
-      placeholder,
+      iconSize,
+      iconColor,
+      fontColor,
+      autoFocus,
       shadowColor,
+      placeholder,
       shadowStyle,
-      textInputComponent,
-      textInputDisable,
+      onPressCancel,
+      iconComponent,
+      noExtraMargin,
+      onPressToFocus,
       textInputValue,
-
-      spinnerColor,
-      spinnerSize,
-      spinnerType,
-      spinnerVisibility,
+      cancelIconName,
+      cancelIconType,
+      cancelIconSize,
+      cancelIconColor,
+      cancelComponent,
+      textInputDisable,
+      textInputComponent,
+      cancelIconComponent,
+      cancelButtonDisable,
     } = this.props;
 
     return (
