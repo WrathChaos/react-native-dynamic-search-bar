@@ -9,7 +9,9 @@ import {
   LayoutAnimation,
 } from "react-native";
 import { LineChart } from "react-native-svg-charts";
-import SearchBar from "react-native-dynamic-search-bar";
+// import SearchBar from "react-native-dynamic-search-bar";
+import SearchBar from "./lib/SearchBar";
+
 import GradientCard from "react-native-gradient-card-view";
 import { ScreenWidth } from "@freakycoder/react-native-helpers";
 import { CustomLayoutSpring } from "react-native-animation-layout";
@@ -125,7 +127,7 @@ export default class App extends Component {
               if (text.length === 0)
                 this.setState({ spinnerVisibility: false });
               else this.setState({ spinnerVisibility: true });
-              // this.filterList(text);
+              this.filterList(text);
             }}
             onPressCancel={() => {
               this.filterList("");

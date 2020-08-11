@@ -17,17 +17,8 @@ import SearchTextInput from "./components/SearchTextInput/SearchTextInput";
 interface IProps {
   width: number;
   height: number;
-  fontSize: number;
-  iconName: string;
-  iconType: string;
-  iconSize: number;
-  shadowStyle: any;
-  onPress: Function;
-  iconColor: string;
-  fontColor: string;
   autoFocus: boolean;
   backgroundColor: string;
-  cancelButtonDisable: boolean;
   cancelComponent: any;
   cancelIconColor: string;
   cancelIconComponent: any;
@@ -53,6 +44,7 @@ interface IProps {
   cancelButtonDisable: boolean;
   spinnerType: any;
   spinnerSize: number;
+  textInputValue: any;
   spinnerColor: string;
   spinnerVisibility: boolean;
 }
@@ -74,17 +66,13 @@ export default class SearchBar extends React.Component<IProps, IState> {
     const {
       height,
       width,
-      spinnerType,
-      spinnerSize,
-      spinnerColor,
-      spinnerVisibility,
-      onPress,
       fontSize,
       iconColor,
       iconComponent,
       iconName,
       iconSize,
       iconType,
+      fontColor,
       noExtraMargin,
       onPress,
       onPressCancel,
@@ -95,11 +83,18 @@ export default class SearchBar extends React.Component<IProps, IState> {
       textInputComponent,
       textInputDisable,
       textInputValue,
-
       spinnerColor,
       spinnerSize,
+      autoFocus,
       spinnerType,
       spinnerVisibility,
+      cancelIconName,
+      cancelIconType,
+      cancelIconSize,
+      cancelIconColor,
+      cancelComponent,
+      cancelIconComponent,
+      cancelButtonDisable,
     } = this.props;
 
     return (
