@@ -7,7 +7,7 @@ import { ScreenWidth } from "@freakycoder/react-native-helpers";
 /**
  * ? Local Imports
  */
-import SearchBar from "./lib/SearchBar";
+import SearchBar from "./build/dist/SearchBar";
 import styles, { centerSubtitleStyle } from "./styles";
 // Static Data
 import staticData from "./src/data/staticData";
@@ -82,7 +82,7 @@ export default class App extends Component<IProps, IState> {
         centerSubtitle={item.change}
         shadowStyle={styles.cardShadowStyle}
         centerSubtitleStyle={centerSubtitleStyle(item)}
-        // rightComponent={this.renderRightComponent(item)}
+        rightComponent={this.renderRightComponent(item)}
       />
     );
   }
@@ -94,18 +94,17 @@ export default class App extends Component<IProps, IState> {
         <StatusBar barStyle={"light-content"} />
         <View style={styles.container}>
           <SearchBar
-            // style={{
-            //   height: 50,
-            // }}
+            darkMode
             placeholder="Search"
             spinnerVisibility={spinnerVisibility}
+            style={{ backgroundColor: "#353d5e" }}
             onChangeText={(text) => {
               if (text.length === 0)
                 this.setState({ spinnerVisibility: false });
               else this.setState({ spinnerVisibility: true });
               this.filterList(text);
             }}
-            onCancelPress={() => {
+            onClearPress={() => {
               this.filterList("");
             }}
           />

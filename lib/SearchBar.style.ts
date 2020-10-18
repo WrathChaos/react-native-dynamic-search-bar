@@ -1,32 +1,36 @@
 import { ViewStyle, ImageStyle, TextStyle, StyleSheet } from "react-native";
 
 interface Style {
-  container: ViewStyle;
   searchContainer: ViewStyle;
   searchIconImageStyle: ImageStyle;
-  textInputStyle: TextStyle;
-  cancelIconImageStyle: ImageStyle;
-  cancelIconContainer: ViewStyle;
+  clearIconImageStyle: ImageStyle;
+  clearIconContainer: ViewStyle;
   spinnerContainer: ViewStyle;
 }
+export const _container = (darkMode: boolean): ViewStyle => ({
+  height: 40,
+  width: "90%",
+  borderRadius: 12,
+  alignSelf: "center",
+  flexDirection: "row",
+  alignItems: "center",
+  backgroundColor: darkMode ? "#19191a" : "#fdfdfd",
+  shadowColor: darkMode ? "#19191a" : "#757575",
+  shadowRadius: 8,
+  shadowOpacity: 0.3,
+  shadowOffset: {
+    width: 0,
+    height: 3,
+  },
+});
+
+export const _textInputStyle = (darkMode: boolean): TextStyle => ({
+  width: "80%",
+  marginLeft: 12,
+  color: darkMode ? "#fdfdfd" : "#19191a",
+});
 
 export default StyleSheet.create<Style>({
-  container: {
-    height: 40,
-    width: "90%",
-    borderRadius: 12,
-    alignSelf: "center",
-    flexDirection: "row",
-    alignItems: "center",
-    backgroundColor: "#fff",
-    shadowRadius: 8,
-    shadowOpacity: 0.3,
-    shadowColor: "#757575",
-    shadowOffset: {
-      width: 0,
-      height: 3,
-    },
-  },
   searchContainer: {
     marginLeft: 12,
   },
@@ -34,17 +38,12 @@ export default StyleSheet.create<Style>({
     width: 18,
     height: 18,
   },
-  textInputStyle: {
-    width: "80%",
-    marginLeft: 12,
-    color: "#19191a",
+  clearIconImageStyle: {
+    width: 15,
+    height: 15,
   },
-  cancelIconImageStyle: {
-    width: 18,
-    height: 18,
-  },
-  cancelIconContainer: {
-    marginRight: 8,
+  clearIconContainer: {
+    marginRight: 12,
     marginLeft: "auto",
   },
   spinnerContainer: {

@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import * as React from "react";
 import {
   Text,
   View,
@@ -15,10 +15,12 @@ import RNBounceable from "@freakycoder/react-native-bounceable";
 /**
  * ? Local Imports
  */
-import styles from "./SearchBar.style";
+import styles, { _container, _textInputStyle } from "./SearchBar.style";
 
 const defaultSearchIcon = require("./local-assets/search-icon.png");
-const defaultCancelIcon = require("./local-assets/cancel-icon.png");
+const whiteSearchIcon = require("./local-assets/search-icon-white.png");
+const defaultClearIcon = require("./local-assets/clear-icon.png");
+const whiteClearIcon = require("./local-assets/clear-icon-white.png");
 
 export interface ISource {
   source: string | { uri: string };
@@ -26,6 +28,7 @@ export interface ISource {
 export interface ISearchBarProps
   extends TouchableWithoutFeedbackProps,
     TextInputProps {
+  darkMode?: boolean;
   placeholder?: string;
   ImageComponent?: any;
   spinnerType?: string;
@@ -33,23 +36,26 @@ export interface ISearchBarProps
   spinnerColor?: string;
   spinnerVisibility?: boolean;
   searchIconComponent?: React.ReactChild;
-  cancelIconComponent?: React.ReactChild;
+  clearIconComponent?: React.ReactChild;
   searchIconImageSource?: ISource;
-  cancelIconImageSource?: ISource;
+  clearIconImageSource?: ISource;
   style?: ViewStyle | Array<ViewStyle> | undefined;
   textInputStyle?: TextStyle | Array<TextStyle>;
   searchIconImageStyle?: ImageStyle | Array<ImageStyle>;
-  cancelIconImageStyle?: ImageStyle | Array<ImageStyle>;
+  clearIconImageStyle?: ImageStyle | Array<ImageStyle>;
   onBlur?: () => void;
   onFocus?: () => void;
   onPress?: () => void;
   onSearchPress?: () => void;
-  onCancelPress?: () => void;
+  onClearPress?: () => void;
 }
 
 interface IState {}
 
-export default class SearchBar extends Component<ISearchBarProps, IState> {
+export default class SearchBar extends React.Component<
+  ISearchBarProps,
+  IState
+> {
   inputRef: TextInput | null = null;
 
   handleSearchBarPress = () => {
@@ -57,9 +63,9 @@ export default class SearchBar extends Component<ISearchBarProps, IState> {
     this.props.onPress && this.props.onPress();
   };
 
-  handleOnCancelPress = () => {
+  handleOnClearPress = () => {
     this.inputRef?.clear();
-    this.props.onCancelPress && this.props.onCancelPress();
+    this.props.onClearPress && this.props.onClearPress();
   };
 
   /* -------------------------------------------------------------------------- */
@@ -68,9 +74,10 @@ export default class SearchBar extends Component<ISearchBarProps, IState> {
 
   renderSpinner = () => {
     const {
+      darkMode = false,
       spinnerSize = 15,
       spinnerType = "FadingCircleAlt",
-      spinnerColor = "#19191a",
+      spinnerColor = darkMode ? "#fdfdfd" : "#19191a",
       spinnerVisibility = false,
     } = this.props;
     return (
@@ -88,10 +95,11 @@ export default class SearchBar extends Component<ISearchBarProps, IState> {
   renderSearchIcon = () => {
     const {
       onSearchPress,
+      darkMode = false,
       searchIconComponent,
       searchIconImageStyle,
       ImageComponent = Image,
-      searchIconImageSource = defaultSearchIcon,
+      searchIconImageSource = darkMode ? whiteSearchIcon : defaultSearchIcon,
     } = this.props;
     return (
       <RNBounceable style={styles.searchContainer} onPress={onSearchPress}>
@@ -111,38 +119,41 @@ export default class SearchBar extends Component<ISearchBarProps, IState> {
       onBlur,
       onFocus,
       textInputStyle,
+      darkMode = false,
       placeholder = "Search here...",
     } = this.props;
     return (
       <TextInput
+        placeholderTextColor={darkMode ? "#fdfdfd" : "#19191a"}
         {...this.props}
         onBlur={onBlur}
         onFocus={onFocus}
         ref={(ref) => (this.inputRef = ref)}
-        style={[styles.textInputStyle, textInputStyle]}
+        style={[_textInputStyle(darkMode), textInputStyle]}
         placeholder={placeholder}
       />
     );
   };
 
-  renderCancelIcon = () => {
+  renderClearIcon = () => {
     const {
-      cancelIconComponent,
-      cancelIconImageStyle,
+      darkMode = false,
+      clearIconComponent,
+      clearIconImageStyle,
       ImageComponent = Image,
-      cancelIconImageSource = defaultCancelIcon,
+      clearIconImageSource = darkMode ? whiteClearIcon : defaultClearIcon,
     } = this.props;
     return (
       <RNBounceable
         bounceEffect={0.8}
-        style={styles.cancelIconContainer}
-        onPress={this.handleOnCancelPress}
+        style={styles.clearIconContainer}
+        onPress={this.handleOnClearPress}
       >
-        {cancelIconComponent || (
+        {clearIconComponent || (
           <ImageComponent
             resizeMode="contain"
-            source={cancelIconImageSource}
-            style={[styles.cancelIconImageStyle, cancelIconImageStyle]}
+            source={clearIconImageSource}
+            style={[styles.clearIconImageStyle, clearIconImageStyle]}
           />
         )}
       </RNBounceable>
@@ -150,17 +161,17 @@ export default class SearchBar extends Component<ISearchBarProps, IState> {
   };
 
   render() {
-    const { style, spinnerVisibility } = this.props;
+    const { style, darkMode = false, spinnerVisibility } = this.props;
     return (
       <RNBounceable
         {...this.props}
         bounceEffect={0.97}
-        style={[styles.container, style]}
+        style={[_container(darkMode), style]}
         onPress={this.handleSearchBarPress}
       >
         {spinnerVisibility ? this.renderSpinner() : this.renderSearchIcon()}
         {this.renderTextInput()}
-        {this.renderCancelIcon()}
+        {this.renderClearIcon()}
       </RNBounceable>
     );
   }

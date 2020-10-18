@@ -1,6 +1,6 @@
 {
   "name": "react-native-dynamic-search-bar",
-  "version": "1.4.0",
+  "version": "2.0.0",
   "description": "Fully customizable and dynamic Search Bar for React Native.",
   "keywords": [
     "gradient",
@@ -33,8 +33,8 @@
     "postversion": "git push && git push --tags"
   },
   "peerDependencies": {
-    "react": ">= 16.x.x",
-    "react-native": ">=0.63.x"
+    "react-native-spinkit": ">= 1.5.0",
+    "@freakycoder/react-native-bounceable": ">= 0.2.2"
   },
   "devDependencies": {
     "@types/react": "^16.9.53",

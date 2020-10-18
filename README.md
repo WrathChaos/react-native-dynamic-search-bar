@@ -48,12 +48,8 @@ npm i WrathChaos/react-native-dynamic-vector-icons#expo
 ###### IMPORTANT! You need install them.
 
 ```js
-"react": ">= 16.x.x",
-"react-native": ">= 0.55.x",
 "react-native-spinkit": ">= 1.5.0",
-"react-native-vector-icons": ">= 6.x.x",
-"react-native-dynamic-vector-icons": ">= x.x.x",
-"@freakycoder/react-native-helpers": ">= 0.1.0",
+"@freakycoder/react-native-bounceable": ">= 0.2.2",
 ```
 
 # Usage
@@ -78,13 +74,8 @@ There are two modes in the library:
 ```jsx
 <SearchBar
   placeholder="Search here"
-  onChangeText={(text) => {
-    console.log(text);
-  }}
-  onPressCancel={() => {
-    this.filterList("");
-  }}
   onPress={() => alert("onPress")}
+  onChangeText={(text) => console.log(text)}
 />
 ```
 
@@ -100,12 +91,9 @@ You can check the example for the advanced usage
   cancelIconColor="#c6c6c6"
   backgroundColor="#353d5e"
   placeholder="Search here"
-  onChangeText={(text) => {
-    this.filterList(text);
-  }}
-  onPressCancel={() => {
-    this.filterList("");
-  }}
+  onChangeText={(text) => this.filterList(text)}
+  onSearchPress={() => console.log("Search Icon is pressed")}
+  onClearPress={() => this.filterList("")}
   onPress={() => alert("onPress")}
 />
 ```
@@ -160,43 +148,30 @@ export default class Test extends Component {
 
 ### Configuration - Props
 
-| Property            |      Type       |      Default      | Description                                                                                           |
-| ------------------- | :-------------: | :---------------: | ----------------------------------------------------------------------------------------------------- |
-| autoFocus           |     boolean     |       true        | change the autoFocus mode for the TextInput                                                           |
-| backgroundColor     |      color      |       #fff        | change the background color of the search bar                                                         |
-| borderRadius        |     number      |        10         | change the border radius of the search bar                                                            |
-| cancelButtonDisable |     boolean     |       false       | disable cancel button component                                                                       |
-| cancelComponent     |    component    |     component     | set your own component instead of cancel component                                                    |
-| cancelIconColor     |      color      |      #b3b6c3      | change the cancel icon color                                                                          |
-| cancelIconComponent |    component    |       Icon        | set your own component instead of Icon for the cancel component (right component)                     |
-| cancelIconName      |     string      |       clear       | change the cancel icon                                                                                |
-| cancelIconSize      |     number      |        23         | change the cancel icon size                                                                           |
-| cancelIconType      |     string      |   MaterialIcons   | change the cancel icon style                                                                          |
-| fontColor           |      color      |      #b3b6c3      | change the font color                                                                                 |
-| fontFamily          |     string      |     undefined     | set the font family for the text input in the search bar                                              |
-| fontSize            |     number      |        13         | change the font size                                                                                  |
-| height              | string / number |        35         | change the height of the search bar                                                                   |
-| iconColor           |      color      |      #807DE7      | change the icon color                                                                                 |
-| iconComponent       |    component    |       Icon        | set your own component instead of Icon                                                                |
-| iconName            |     string      |      search       | change the icon                                                                                       |
-| iconSize            |     number      |        20         | change the icon size                                                                                  |
-| iconType            |     string      |     Octicons      | change the icon style                                                                                 |
-| noExtraMargin       |     boolean     |       false       | remove extra padding on iPhone X devices                                                              |
-| onChangeText        |    function     |     function      | set your own function for the onChangeText logic                                                      |
-| onPress             |    function     |     function      | set your own function for the onPress functionality                                                   |
-| onPressCancel       |    function     |     function      | set your own function for the cancel button's onPress functionality                                   |
-| onPressToFocus      |     boolean     |       false       | when enable it, onPress will automatically focus on the TextInput and opens the soft virtual keyboard |
-| placeholder         |     string      |       null        | set your own placeholder string                                                                       |
-| shadowColor         |      color      |      #757575      | change the shadow color                                                                               |
-| shadowStyle         |      style      |   shadow style    | set your own shadow style                                                                             |
-| spinnerColor        |      color      |      #fdfdfd      | change the spinner color                                                                              |
-| spinnerSize         |     number      |      default      | change the spinner size                                                                               |
-| spinnerType         |     string      |      Circle       | change the spinner type                                                                               |
-| spinnerVisibility   |     boolean     |       false       | change the spinner visibility                                                                         |
-| textInputComponent  |    component    | Text OR TextInput | set your own component instead of Text OR TextInput for the center component                          |
-| textInputDisable    |     boolean     |       false       | disable the text input, and Text component will be available instead                                  |
-| textInputValue      |     string      |       value       | set the value of the text input                                                                       |
-| width               | string / number | ScreenWidth\*0.93 | change the width of the search bar                                                                    |
+| Property              |    Type    |     Default      | Description                                                              |
+| --------------------- | :--------: | :--------------: | ------------------------------------------------------------------------ |
+| style                 | ViewStyle  |     default      | set or override the style object for the main search view                |
+| darkMode              |  boolean   |      false       | enable the dark mode                                                     |
+| onChangeText          |  function  |     function     | set your own function for the onChangeText logic                         |
+| onPress               |  function  |     function     | set your own function for the onPress functionality                      |
+| onSearchPress         |  function  |     function     | set your own function for the **search** button's onPress functionality  |
+| onClearPress          |  function  |     function     | set your own function for the **clear** button's onPress functionality   |
+| onBlur                |  function  |     function     | set your own function for the text input's onBlur functionality          |
+| onFocus               |  function  |     function     | set your own function for the text input's onBlur functionality          |
+| textInputStyle        | TextStyle  |     default      | set or override the style object for the text input                      |
+| searchIconImageStyle  | ImageStyle |     default      | set or override the style object for the search icon image style         |
+| clearIconImageStyle   | ImageStyle |     default      | set or override the style object for the clear icon image style          |
+| ImageComponent        | component  |      Image       | set your own Image component instead of react-native's default Image one |
+| searchIconComponent   | component  |     default      | set your own component instead of Icon for the **search** component      |
+| clearIconComponent    | component  |     default      | set your own component instead of Icon for the **clear** component       |
+| searchIconImageSource |  ISource   |     default      | change the search icon image source                                      |
+| clearIconImageSource  |  ISource   |     default      | change the clear icon image source                                       |
+| clearIconImageSource  |  ISource   |     default      | change the clear icon image source                                       |
+| placeholder           |   string   | "Search here..." | set your own placeholder string                                          |
+| spinnerColor          |   color    |     #fdfdfd      | change the spinner color                                                 |
+| spinnerSize           |   number   |     default      | change the spinner size                                                  |
+| spinnerType           |   string   |      Circle      | change the spinner type                                                  |
+| spinnerVisibility     |  boolean   |      false       | change the spinner visibility                                            |
 
 ## Expo Compatibility
 
@@ -218,7 +193,7 @@ Dynamic Search Bar is usable with Expo. You just need to add a peer dependency:
 apply from: "../../node_modules/react-native-vector-icons/fonts.gradle"
 ```
 
-#### Animations are not working on the Android like the example ?
+#### Animations are not working on the Android like the example?
 
 -> You need to enable experimental LayoutAnimation on the android. Here is how to do it:
 
@@ -227,7 +202,6 @@ import { UIManager } from 'react-native';
 
 constructor() {
     super();
-
     if (Platform.OS === 'android') {
       UIManager.setLayoutAnimationEnabledExperimental && UIManager.setLayoutAnimationEnabledExperimental(true);
     }
@@ -236,7 +210,8 @@ constructor() {
 
 ### Roadmap
 
-- [ ] Full code refactoring with better Typescript
+- [x] ~~Completely rewritten with better coding and less dependency~~
+- [x] ~~Full code refactoring with better Typescript~~
 - [x] ~~LICENSE~~
 - [x] ~~Write an article about the lib on Medium~~
 - [x] ~~Typescript Challenge!~~
