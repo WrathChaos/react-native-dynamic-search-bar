@@ -34,16 +34,29 @@
   },
   "peerDependencies": {
     "react": ">= 16.x.x",
-    "react-native": ">= 0.55.x",
-    "react-native-spinkit": ">= 1.5.0",
-    "react-native-vector-icons": ">= 6.x.x",
-    "react-native-dynamic-vector-icons": ">= x.x.x",
-    "@freakycoder/react-native-helpers": ">= 0.1.0"
+    "react-native": ">=0.63.x"
   },
   "devDependencies": {
-    "@types/react": "^16.9.22",
-    "@types/react-native": "^0.63.0",
+    "@types/react": "^16.9.53",
+    "@types/react-native": "^0.63.25",
     "react-native-typescript-transformer": "^1.2.13",
-    "typescript": "^4.0.2"
+    "typescript": "^4.0.3",
+    "@react-native-community/eslint-config": "^2.0.0",
+    "eslint": "^7.11.0",
+    "eslint-config-airbnb": "^18.2.0",
+    "husky": "^4.3.0",
+    "lint-staged": "^10.4.2",
+    "prettier": "^2.1.2"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "./src/*.{js,jsx,ts,tsx}": [
+      "npx prettier --write",
+      "eslint src/*.js --fix-dry-run"
+    ]
   }
 }

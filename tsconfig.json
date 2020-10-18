@@ -17,7 +17,9 @@
     "importHelpers": true,
     "experimentalDecorators": true,
     "allowSyntheticDefaultImports": true,
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "declaration": true /* Generates corresponding '.d.ts' file. */,
+    "sourceMap": true /* Generates corresponding '.map' file. */
   },
   "exclude": [
     "example",

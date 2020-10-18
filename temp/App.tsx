@@ -1,32 +1,29 @@
 import React, { Component } from "react";
-import { View, StatusBar, FlatList, Platform, UIManager } from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
+import {
+  View,
+  Platform,
+  FlatList,
+  StatusBar,
+  UIManager,
+  SafeAreaView,
+  LayoutAnimation,
+} from "react-native";
 import { LineChart } from "react-native-svg-charts";
+// import SearchBar from "react-native-dynamic-search-bar";
+import SearchBar from "./lib/SearchBar";
 import GradientCard from "react-native-gradient-card-view";
 import { ScreenWidth } from "@freakycoder/react-native-helpers";
-/**
- * ? Local Imports
- */
-import SearchBar from "./lib/SearchBar";
-import styles, { centerSubtitleStyle } from "./styles";
+import { CustomLayoutSpring } from "react-native-animation-layout";
 // Static Data
 import staticData from "./src/data/staticData";
+import styles, { centerSubtitleStyle } from "./styles";
 
-interface IProps {}
-
-interface IState {
-  query: string;
-  dataBackup: any;
-  dataSource: any;
-  isLoading: boolean;
-  refreshing: boolean;
-  spinnerVisibility: boolean;
-}
-
-export default class App extends Component<IProps, IState> {
-  constructor(props: IProps) {
+export default class App extends Component {
+  constructor(props) {
     super(props);
     this.state = {
+      page: 1,
+      seed: 1,
       query: "",
       isLoading: true,
       refreshing: false,
@@ -41,20 +38,21 @@ export default class App extends Component<IProps, IState> {
     }
   }
 
-  filterList = (text: string) => {
+  filterList = (text) => {
     var newData = this.state.dataBackup;
-    newData = this.state.dataBackup.filter((item: any) => {
+    newData = this.state.dataBackup.filter((item) => {
       const itemData = item.name.toLowerCase();
       const textData = text.toLowerCase();
       return itemData.indexOf(textData) > -1;
     });
+    LayoutAnimation.configureNext(CustomLayoutSpring(null, null, "scaleXY"));
     this.setState({
       query: text,
       dataSource: newData,
     });
   };
 
-  renderRightComponent = (item: any) => (
+  renderRightComponent = (item) => (
     <View>
       <LineChart
         data={item.data}
@@ -69,7 +67,7 @@ export default class App extends Component<IProps, IState> {
     </View>
   );
 
-  renderItem(item: any) {
+  renderItem(item) {
     return (
       <GradientCard
         key={item.name}
@@ -82,10 +80,29 @@ export default class App extends Component<IProps, IState> {
         centerSubtitle={item.change}
         shadowStyle={styles.cardShadowStyle}
         centerSubtitleStyle={centerSubtitleStyle(item)}
-        // rightComponent={this.renderRightComponent(item)}
+        rightComponent={this.renderRightComponent(item)}
       />
     );
   }
+
+  onRefresh = () => {
+    this.setState({
+      dataSource: [],
+      isLoading: false,
+      refreshing: true,
+      seed: 1,
+      page: 1,
+    });
+    // this.fetchData();
+  };
+
+  loadMore = () => {
+    this.setState({
+      // refreshing: true,
+      page: this.state.page + 1,
+    });
+    // this.fetchData();
+  };
 
   render() {
     const { spinnerVisibility } = this.state;
@@ -94,10 +111,16 @@ export default class App extends Component<IProps, IState> {
         <StatusBar barStyle={"light-content"} />
         <View style={styles.container}>
           <SearchBar
-            // style={{
-            //   height: 50,
-            // }}
+            // width={300}
+            // height={50}
+            onPressToFocus
+            autoFocus={false}
+            fontColor="#c6c6c6"
+            iconColor="#c6c6c6"
             placeholder="Search"
+            shadowColor="#282828"
+            cancelIconColor="#c6c6c6"
+            backgroundColor="#353d5e"
             spinnerVisibility={spinnerVisibility}
             onChangeText={(text) => {
               if (text.length === 0)
@@ -105,13 +128,18 @@ export default class App extends Component<IProps, IState> {
               else this.setState({ spinnerVisibility: true });
               this.filterList(text);
             }}
-            onCancelPress={() => {
+            onPressCancel={() => {
               this.filterList("");
             }}
+            // onPress={() => alert("onPress")}
+            // onKeyPress={() => alert("onKeyPress")}
           />
           <View style={styles.flatListStyle}>
             <FlatList
+              onRefresh={this.onRefresh}
               data={this.state.dataSource}
+              onEndReached={this.loadMore}
+              refreshing={this.state.refreshing}
               renderItem={({ item }) => this.renderItem(item)}
             />
           </View>

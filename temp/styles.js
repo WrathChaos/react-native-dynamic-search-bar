@@ -44,6 +44,9 @@ export default {
         top: 24,
       },
     }),
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
     backgroundColor: "#21283d",
   },
   welcome: {

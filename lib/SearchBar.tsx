@@ -1,186 +1,167 @@
-import * as React from "react";
-import { View, TextInput, TouchableOpacity } from "react-native";
+import React, { Component } from "react";
+import {
+  Text,
+  View,
+  Image,
+  TextInput,
+  ViewStyle,
+  TextStyle,
+  ImageStyle,
+  TextInputProps,
+  TouchableWithoutFeedbackProps,
+} from "react-native";
 import Spinner from "react-native-spinkit";
+import RNBounceable from "@freakycoder/react-native-bounceable";
 /**
  * ? Local Imports
  */
-import styles, {
-  container,
-  _shadowStyle,
-  textInputStyle,
-  ifIPhoneXHeader,
-} from "./SearchBar.style";
-import SearchIcon from "./components/SearchIcon/SearchIcon";
-import SearchCancel from "./components/SearchCancel/SearchCancel";
-import SearchTextInput from "./components/SearchTextInput/SearchTextInput";
+import styles from "./SearchBar.style";
 
-interface IProps {
-  width: number;
-  height: number;
-  autoFocus: boolean;
-  backgroundColor: string;
-  cancelComponent: any;
-  cancelIconColor: string;
-  cancelIconComponent: any;
-  cancelIconName: string;
-  cancelIconSize: number;
-  cancelIconType: string;
-  fontColor: string;
-  fontSize: number;
-  iconColor: string;
-  iconComponent: any;
-  iconName: string;
-  iconSize: number;
-  iconType: string;
-  noExtraMargin: boolean;
-  onPress: Function;
-  onPressCancel: Function;
-  onPressToFocus: Function;
-  placeholder: string;
-  shadowColor: string;
-  shadowStyle: any;
-  textInputComponent: any;
-  textInputDisable: boolean;
-  cancelButtonDisable: boolean;
-  spinnerType: any;
-  spinnerSize: number;
-  textInputValue: any;
-  spinnerColor: string;
-  spinnerVisibility: boolean;
+const defaultSearchIcon = require("./local-assets/search-icon.png");
+const defaultCancelIcon = require("./local-assets/cancel-icon.png");
+
+export interface ISource {
+  source: string | { uri: string };
+}
+export interface ISearchBarProps
+  extends TouchableWithoutFeedbackProps,
+    TextInputProps {
+  placeholder?: string;
+  ImageComponent?: any;
+  spinnerType?: string;
+  spinnerSize?: number;
+  spinnerColor?: string;
+  spinnerVisibility?: boolean;
+  searchIconComponent?: React.ReactChild;
+  cancelIconComponent?: React.ReactChild;
+  searchIconImageSource?: ISource;
+  cancelIconImageSource?: ISource;
+  style?: ViewStyle | Array<ViewStyle> | undefined;
+  textInputStyle?: TextStyle | Array<TextStyle>;
+  searchIconImageStyle?: ImageStyle | Array<ImageStyle>;
+  cancelIconImageStyle?: ImageStyle | Array<ImageStyle>;
+  onBlur?: () => void;
+  onFocus?: () => void;
+  onPress?: () => void;
+  onSearchPress?: () => void;
+  onCancelPress?: () => void;
 }
 
 interface IState {}
 
-let textInputRef: any = null;
+export default class SearchBar extends Component<ISearchBarProps, IState> {
+  inputRef: TextInput | null = null;
 
-export default class SearchBar extends React.Component<IProps, IState> {
-  textInput: any = null;
-  public static defaultProps = {
-    spinnerSize: 16,
-    spinnerType: "Circle",
-    spinnerColor: "#fdfdfd",
-    spinnerVisibility: false,
+  handleSearchBarPress = () => {
+    this.inputRef?.focus();
+    this.props.onPress && this.props.onPress();
+  };
+
+  handleOnCancelPress = () => {
+    this.inputRef?.clear();
+    this.props.onCancelPress && this.props.onCancelPress();
+  };
+
+  /* -------------------------------------------------------------------------- */
+  /*                               Render Methods                               */
+  /* -------------------------------------------------------------------------- */
+
+  renderSpinner = () => {
+    const {
+      spinnerSize = 15,
+      spinnerType = "FadingCircleAlt",
+      spinnerColor = "#19191a",
+      spinnerVisibility = false,
+    } = this.props;
+    return (
+      <View style={styles.spinnerContainer}>
+        <Spinner
+          size={spinnerSize}
+          type={spinnerType}
+          color={spinnerColor}
+          isVisible={spinnerVisibility}
+        />
+      </View>
+    );
+  };
+
+  renderSearchIcon = () => {
+    const {
+      onSearchPress,
+      searchIconComponent,
+      searchIconImageStyle,
+      ImageComponent = Image,
+      searchIconImageSource = defaultSearchIcon,
+    } = this.props;
+    return (
+      <RNBounceable style={styles.searchContainer} onPress={onSearchPress}>
+        {searchIconComponent || (
+          <ImageComponent
+            resizeMode="contain"
+            source={searchIconImageSource}
+            style={[styles.searchIconImageStyle, searchIconImageStyle]}
+          />
+        )}
+      </RNBounceable>
+    );
+  };
+
+  renderTextInput = () => {
+    const {
+      onBlur,
+      onFocus,
+      textInputStyle,
+      placeholder = "Search here...",
+    } = this.props;
+    return (
+      <TextInput
+        {...this.props}
+        onBlur={onBlur}
+        onFocus={onFocus}
+        ref={(ref) => (this.inputRef = ref)}
+        style={[styles.textInputStyle, textInputStyle]}
+        placeholder={placeholder}
+      />
+    );
+  };
+
+  renderCancelIcon = () => {
+    const {
+      cancelIconComponent,
+      cancelIconImageStyle,
+      ImageComponent = Image,
+      cancelIconImageSource = defaultCancelIcon,
+    } = this.props;
+    return (
+      <RNBounceable
+        bounceEffect={0.8}
+        style={styles.cancelIconContainer}
+        onPress={this.handleOnCancelPress}
+      >
+        {cancelIconComponent || (
+          <ImageComponent
+            resizeMode="contain"
+            source={cancelIconImageSource}
+            style={[styles.cancelIconImageStyle, cancelIconImageStyle]}
+          />
+        )}
+      </RNBounceable>
+    );
   };
 
   render() {
-    const {
-      height,
-      width,
-      fontSize,
-      iconColor,
-      autoFocus,
-      iconComponent,
-      iconName,
-      iconSize,
-      iconType,
-      fontColor,
-      noExtraMargin,
-      onPress,
-      onPressCancel,
-      onPressToFocus,
-      placeholder,
-      shadowColor,
-      shadowStyle,
-      textInputComponent,
-      textInputDisable,
-      textInputValue,
-      spinnerColor,
-      spinnerSize,
-      spinnerType,
-      spinnerVisibility,
-      cancelIconName,
-      cancelIconType,
-      cancelIconSize,
-      cancelIconColor,
-      cancelComponent,
-      cancelIconComponent,
-      cancelButtonDisable,
-    } = this.props;
-
+    const { style, spinnerVisibility } = this.props;
     return (
-      <TouchableOpacity
-        style={[
-          styles.center,
-          container(this.props),
-          ifIPhoneXHeader(noExtraMargin),
-          shadowStyle || _shadowStyle(shadowColor),
-        ]}
-        onPress={() => {
-          onPressToFocus ? textInputRef.focus() : onPress();
-        }}
+      <RNBounceable
+        {...this.props}
+        bounceEffect={0.97}
+        style={[styles.container, style]}
+        onPress={this.handleSearchBarPress}
       >
-        <View style={styles.containerGlue}>
-          <View style={styles.searchStyle}>
-            {spinnerVisibility ? (
-              <View
-                style={{
-                  left: 8,
-                  bottom: 3,
-                  alignContent: "center",
-                  justifyContent: "center",
-                }}
-              >
-                <Spinner
-                  type={spinnerType}
-                  size={spinnerSize}
-                  color={spinnerColor}
-                  {...this.props}
-                />
-              </View>
-            ) : (
-              <SearchIcon
-                iconName={iconName}
-                iconType={iconType}
-                iconSize={iconSize}
-                iconColor={iconColor}
-                iconComponent={iconComponent}
-              />
-            )}
-            <SearchTextInput
-              fontSize={fontSize}
-              fontColor={fontColor}
-              placeholder={placeholder}
-              textInputDisable={textInputDisable}
-              textInputComponent={
-                textInputComponent ||
-                (!textInputDisable && (
-                  <View style={styles.textInputContainer}>
-                    <TextInput
-                      autoFocus={autoFocus}
-                      value={textInputValue}
-                      placeholder={placeholder}
-                      placeholderTextColor={fontColor}
-                      style={textInputStyle(fontSize, fontColor, height, width)}
-                      ref={(c) => {
-                        this.textInput = c;
-                        textInputRef = c;
-                      }}
-                      {...this.props}
-                    />
-                  </View>
-                ))
-              }
-            />
-          </View>
-          <SearchCancel
-            cancelIconName={cancelIconName}
-            cancelIconType={cancelIconType}
-            cancelIconSize={cancelIconSize}
-            cancelIconColor={cancelIconColor}
-            cancelComponent={cancelComponent}
-            cancelIconComponent={cancelIconComponent}
-            cancelButtonDisable={cancelButtonDisable}
-            onPressCancel={() => {
-              if (onPressCancel) {
-                if (this.textInput) this.textInput.clear();
-                onPressCancel();
-              } else {
-                if (this.textInput) this.textInput.clear();
-              }
-            }}
-          />
-        </View>
-      </TouchableOpacity>
+        {spinnerVisibility ? this.renderSpinner() : this.renderSearchIcon()}
+        {this.renderTextInput()}
+        {this.renderCancelIcon()}
+      </RNBounceable>
     );
   }
 }

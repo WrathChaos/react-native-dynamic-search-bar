@@ -1,25 +1,21 @@
 import * as React from "react";
-import { TouchableOpacity, View } from "react-native";
-import Icon from "react-native-dynamic-vector-icons";
+import {  Image, TouchableOpacity } from "react-native";
 /**
  * ? Local Imports
  */
 import styles from "./SearchCancel.style";
 
-interface IProps {
-  onPressCancel: any;
-  cancelComponent: any;
-  cancelIconName: string;
-  cancelIconType: string;
-  cancelIconSize: number;
-  cancelIconColor: string;
-  cancelIconComponent: any;
+export interface ISearchCancelProps {
+  cancelComponent?: any;
+  ImageComponent?: any;
+  cancelIconComponent?: any;
   cancelButtonDisable: boolean;
+  onPressCancel: () => void;
 }
 
 interface IState {}
 
-export default class SearchCancel extends React.PureComponent<IProps, IState> {
+export default class SearchCancel extends React.PureComponent<ISearchCancelProps, IState> {
   public static defaultProps = {
     cancelIconName: "clear",
     cancelIconType: "MaterialIcons",
@@ -27,13 +23,10 @@ export default class SearchCancel extends React.PureComponent<IProps, IState> {
     cancelIconColor: "#b3b6c3",
   };
 
-  renderIcon(props) {
+  renderIcon(props: ISearchCancelProps) {
     const {
       onPressCancel,
-      cancelIconName,
-      cancelIconType,
-      cancelIconSize,
-      cancelIconColor,
+      ImageComponent = Image,
       cancelIconComponent,
       cancelButtonDisable,
     } = props;
@@ -42,12 +35,7 @@ export default class SearchCancel extends React.PureComponent<IProps, IState> {
       !cancelButtonDisable && (
         <TouchableOpacity onPress={onPressCancel} style={styles.iconContainer}>
           {cancelIconComponent || (
-            <Icon
-              name={cancelIconName}
-              type={cancelIconType}
-              size={cancelIconSize}
-              color={cancelIconColor}
-            />
+            <ImageComponent source={require("../../local-assets/cancel-icon.png")} style={{height:20, width:20}} />
           )}
         </TouchableOpacity>
       )

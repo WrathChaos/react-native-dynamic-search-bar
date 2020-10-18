@@ -7,6 +7,7 @@ import {
   ViewStyle,
   TextStyle,
   ImageStyle,
+  TextInputProps,
   TouchableWithoutFeedbackProps,
 } from "react-native";
 import Spinner from "react-native-spinkit";
@@ -22,7 +23,9 @@ const defaultCancelIcon = require("./local-assets/cancel-icon.png");
 export interface ISource {
   source: string | { uri: string };
 }
-export interface ISearchBarProps extends TouchableWithoutFeedbackProps {
+export interface ISearchBarProps
+  extends TouchableWithoutFeedbackProps,
+    TextInputProps {
   placeholder?: string;
   ImageComponent?: any;
   spinnerType?: string;
@@ -37,6 +40,8 @@ export interface ISearchBarProps extends TouchableWithoutFeedbackProps {
   textInputStyle?: TextStyle | Array<TextStyle>;
   searchIconImageStyle?: ImageStyle | Array<ImageStyle>;
   cancelIconImageStyle?: ImageStyle | Array<ImageStyle>;
+  onBlur?: () => void;
+  onFocus?: () => void;
   onPress?: () => void;
   onSearchPress?: () => void;
   onCancelPress?: () => void;
@@ -102,10 +107,17 @@ export default class SearchBar extends Component<ISearchBarProps, IState> {
   };
 
   renderTextInput = () => {
-    const { textInputStyle, placeholder = "Search here..." } = this.props;
+    const {
+      onBlur,
+      onFocus,
+      textInputStyle,
+      placeholder = "Search here...",
+    } = this.props;
     return (
       <TextInput
         {...this.props}
+        onBlur={onBlur}
+        onFocus={onFocus}
         ref={(ref) => (this.inputRef = ref)}
         style={[styles.textInputStyle, textInputStyle]}
         placeholder={placeholder}
