@@ -15,7 +15,7 @@ export default class App extends Component<IProps, IState> {
   render() {
     return (
       <SafeAreaView style={{ flex: 1 }}>
-        <SearchBar disabled />
+        <SearchBar />
       </SafeAreaView>
     );
   }
