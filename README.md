@@ -26,6 +26,10 @@
 <img alt="React Native Dynamic Search Bar" src="assets/Screenshots/RN-Dynamic-Search-Bar-Spinner.gif" />
 </p>
 
+# Version 2.0 🥳
+
+🥳 Version 2.0 is finally here :O `SearchBar` is completely re-written from scratch. It has much better coding for maintenance and less dependency. Much better prop management therefore, cool customizations are possible with predefined `dark mode` integration. I can't waiting to see what you're going to make with this `SearchBar` 😍
+
 ## Installation
 
 Add the dependency:
