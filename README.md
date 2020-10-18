@@ -28,7 +28,15 @@
 
 # Version 2.0 🥳
 
-🥳 Version 2.0 is finally here :O `SearchBar` is completely re-written from scratch. It has much better coding for maintenance and less dependency. Much better prop management therefore, cool customizations are possible with predefined `dark mode` integration. I can't waiting to see what you're going to make with this `SearchBar` 😍
+Version 2.0 is here :O
+
+- Completely re-written from scratch 💪
+- Much better coding for maintenance and less dependency
+- 3 dependencies are removed 😱
+- Better prop management and cool customizations are possible now
+- Dark Mode integration 🌙
+
+<i>I can't waiting to see what you're going to make with this `SearchBar` 😍</i>
 
 ## Installation
 
