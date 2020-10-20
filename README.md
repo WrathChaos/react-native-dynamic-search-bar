@@ -231,13 +231,27 @@ constructor() {
 
 # Changelog
 
-## [1.3.1](https://github.com/WrathChaos/react-native-dynamic-search-bar/tree/1.3.0) (2020-08-11)
+## [2.0.0](https://github.com/WrathChaos/react-native-dynamic-search-bar/tree/2.0.0) (2020-10-18)
 
-[Full Changelog](https://github.com/WrathChaos/react-native-dynamic-search-bar/compare/1.2.1...1.3.0)
+[Full Changelog](https://github.com/WrathChaos/react-native-dynamic-search-bar/compare/1.3.1...2.0.0)
 
-- Finally `height` and `width` props are working properly. 🔥
-- TextInput's `height` bug is fixed. (That ugly thing is finally fixed) 🥳
-- Better typescript refactoring is incoming with the next version ⏳
+### Version 2.0 🥳
+
+Version 2.0 is here :O
+
+- Completely re-written from scratch 💪
+- Much better coding for maintenance and less dependency
+- 3 dependencies are removed 😱
+- Better prop management and cool customizations are possible now
+- Dark Mode integration 🌙
+
+**Merged pull requests:**
+
+- Bump typescript from 3.9.7 to 4.0.2 [\#37](https://github.com/WrathChaos/react-native-dynamic-search-bar/pull/37) ([dependabot-preview[bot]](https://github.com/apps/dependabot-preview))
+
+## [1.3.1](https://github.com/WrathChaos/react-native-dynamic-search-bar/tree/1.3.1) (2020-08-11)
+
+[Full Changelog](https://github.com/WrathChaos/react-native-dynamic-search-bar/compare/1.2.1...1.3.1)
 
 **Closed issues:**
 
@@ -296,11 +310,6 @@ constructor() {
 ## [1.0.1](https://github.com/WrathChaos/react-native-dynamic-search-bar/tree/1.0.1) (2020-04-11)
 
 [Full Changelog](https://github.com/WrathChaos/react-native-dynamic-search-bar/compare/1.0.0...1.0.1)
-
-- Typescript 😍
-- Fully refactored the code base 😇
-- Finally version 1.0 🥳
-- README is updated with new screenshots
 
 ## [1.0.0](https://github.com/WrathChaos/react-native-dynamic-search-bar/tree/1.0.0) (2020-04-11)
 
