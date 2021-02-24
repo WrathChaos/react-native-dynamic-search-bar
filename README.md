@@ -22,7 +22,7 @@
       <img alt="React Native Dynamic Search Bar" src="assets/Screenshots/RN-Dynamic-SearchBar.gif" />
     </td>
     <td align="center">
-    <img alt="React Native Dynamic Search Bar" src="assets/Screenshots/RN-Dynamic-SearchBar.png" height="800" />
+    <img alt="React Native Dynamic Search Bar" src="assets/Screenshots/RN-Dynamic-SearchBar.png" />
     </td>
    </tr>
 </table>
