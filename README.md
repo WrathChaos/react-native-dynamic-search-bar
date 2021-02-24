@@ -16,14 +16,20 @@
   </a>
 </p>
 
-<p align="center">
-<img alt="React Native Dynamic Search Bar" src="assets/Screenshots/RN-Dynamic-SearchBar.gif" />
-<img alt="React Native Dynamic Search Bar" src="assets/Screenshots/RN-Dynamic-SearchBar.png" height="800" />
-</p>
+<table>
+  <tr>
+    <td align="center">
+      <img alt="React Native Dynamic Search Bar" src="assets/Screenshots/RN-Dynamic-SearchBar.gif" />
+    </td>
+    <td align="center">
+    <img alt="React Native Dynamic Search Bar" src="assets/Screenshots/RN-Dynamic-SearchBar.png" height="800" />
+    </td>
+   </tr>
+</table>
 
 <h1 align="center"> Built-in Spinner </h1>
-<p align="center">
-<img alt="React Native Dynamic Search Bar" src="assets/Screenshots/RN-Dynamic-Search-Bar-Spinner.gif" />
+  <p align="center">
+  <img alt="React Native Dynamic Search Bar" src="assets/Screenshots/RN-Dynamic-Search-Bar-Spinner.gif" />
 </p>
 
 # Version 2.0 🥳
@@ -57,10 +63,10 @@ npm i WrathChaos/react-native-dynamic-vector-icons#expo
 
 ## Peer Dependencies
 
-###### IMPORTANT! You need install them.
+###### IMPORTANT! You need install them
 
 ```js
-"react-native-spinkit": ">= 1.5.0",
+"react-native-animated-spinkit": "^1.4.1",
 "@freakycoder/react-native-bounceable": ">= 0.2.2",
 ```
 
@@ -182,7 +188,7 @@ export default class Test extends Component {
 | placeholder           |   string   | "Search here..." | set your own placeholder string                                          |
 | spinnerColor          |   color    |     #fdfdfd      | change the spinner color                                                 |
 | spinnerSize           |   number   |     default      | change the spinner size                                                  |
-| spinnerType           |   string   |      Circle      | change the spinner type                                                  |
+| SpinnerType           | component  |      Circle      | change the spinner type                                                  |
 | spinnerVisibility     |  boolean   |      false       | change the spinner visibility                                            |
 
 ## Expo Compatibility
