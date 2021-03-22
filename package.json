@@ -38,7 +38,7 @@
   },
   "devDependencies": {
     "@types/react": "^17.0.0",
-    "@types/react-native": "^0.63.25",
+    "@types/react-native": "^0.64.0",
     "react-native-typescript-transformer": "^1.2.13",
     "typescript": "^4.0.3",
     "@react-native-community/eslint-config": "^2.0.0",
