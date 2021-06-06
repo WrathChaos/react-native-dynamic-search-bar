@@ -35,6 +35,7 @@ export interface ISearchBarProps
   spinnerSize?: number;
   spinnerColor?: string;
   spinnerVisibility?: boolean;
+  placeholderTextColor?: string;
   searchIconComponent?: React.ReactChild;
   clearIconComponent?: React.ReactChild;
   searchIconImageSource?: ISource;
@@ -121,10 +122,15 @@ export default class SearchBar extends React.Component<
       textInputStyle,
       darkMode = false,
       placeholder = "Search here...",
+      placeholderTextColor,
     } = this.props;
+    let _placeholderTextColor = placeholderTextColor;
+    if (!placeholderTextColor) {
+      _placeholderTextColor = darkMode ? "#fdfdfd" : "#19191a";
+    }
     return (
       <TextInput
-        placeholderTextColor={darkMode ? "#fdfdfd" : "#19191a"}
+        placeholderTextColor={_placeholderTextColor}
         {...this.props}
         onBlur={onBlur}
         onFocus={onFocus}

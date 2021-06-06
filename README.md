@@ -34,7 +34,7 @@
 
 # Version 2.0 🥳
 
-Version 2.0 is here :O
+Version 2.0 is here 🥳
 
 - Completely re-written from scratch 💪
 - Much better coding for maintenance and less dependency
@@ -186,6 +186,7 @@ export default class Test extends Component {
 | clearIconImageSource  |  ISource   |     default      | change the clear icon image source                                       |
 | clearIconImageSource  |  ISource   |     default      | change the clear icon image source                                       |
 | placeholder           |   string   | "Search here..." | set your own placeholder string                                          |
+| placeholderTextColor  |   color    |    undefined     | set placeholder text color                                               |
 | spinnerColor          |   color    |     #fdfdfd      | change the spinner color                                                 |
 | spinnerSize           |   number   |     default      | change the spinner size                                                  |
 | SpinnerType           | component  |      Circle      | change the spinner type                                                  |

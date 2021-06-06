@@ -7,7 +7,8 @@ import { ScreenWidth } from "@freakycoder/react-native-helpers";
 /**
  * ? Local Imports
  */
-import SearchBar from "react-native-dynamic-search-bar";
+// import SearchBar from "react-native-dynamic-search-bar";
+import SearchBar from "./build/dist/SearchBar";
 import styles, { centerSubtitleStyle } from "./styles";
 // Static Data
 import staticData from "./src/data/staticData";
