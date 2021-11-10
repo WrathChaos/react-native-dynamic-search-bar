@@ -3,8 +3,8 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "android": "react-native run-android",
-    "ios": "react-native run-ios",
+    "android": "npx react-native run-android",
+    "ios": "npx react-native run-ios",
     "start": "react-native start",
     "test": "jest",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
@@ -15,7 +15,7 @@
     "react": "16.14.0",
     "react-native": "0.64.1",
     "react-native-animation-layout": "0.0.13",
-    "react-native-dynamic-search-bar": "2.0.0",
+    "react-native-dynamic-search-bar": "^2.0.0",
     "react-native-fast-image": "^8.3.2",
     "react-native-gesture-handler": "^1.8.0",
     "react-native-gradient-card-view": "0.1.0",
