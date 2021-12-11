@@ -1,6 +1,6 @@
 {
   "name": "react-native-dynamic-search-bar",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "Fully customizable and dynamic Search Bar for React Native.",
   "keywords": [
     "gradient",
@@ -47,16 +47,5 @@
     "husky": "^7.0.0",
     "lint-staged": "^12.0.3",
     "prettier": "^2.1.2"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
-  "lint-staged": {
-    "./src/*.{js,jsx,ts,tsx}": [
-      "npx prettier --write",
-      "eslint src/*.js --fix-dry-run"
-    ]
   }
 }
