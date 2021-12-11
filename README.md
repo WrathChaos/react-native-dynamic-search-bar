@@ -66,7 +66,7 @@ npm i WrathChaos/react-native-dynamic-vector-icons#expo
 ###### IMPORTANT! You need install them
 
 ```js
-"react-native-animated-spinkit": "^1.4.1",
+"react-native-spinkit": ">= 1.5.0",
 "@freakycoder/react-native-bounceable": ">= 0.2.2",
 ```
 
