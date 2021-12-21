@@ -25,27 +25,36 @@
   "repository": "git@github.com:WrathChaos/react-native-dynamic-search-bar.git",
   "author": "Kuray (FreakyCoder) <kurayogun@gmail.com>",
   "license": "MIT",
-  "scripts": {
-    "build": "cd lib && tsc && cp ../package.json ../build/dist/ && Echo Build completed!",
-    "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
-    "lint": "tslint -p tsconfig.json",
-    "version": "npm run format && git add -A src",
-    "postversion": "git push && git push --tags"
-  },
   "peerDependencies": {
     "react-native-spinkit": ">= 1.5.0",
     "@freakycoder/react-native-bounceable": ">= 0.2.2"
   },
   "devDependencies": {
-    "@types/react": "^17.0.0",
-    "@types/react-native": "^0.66.0",
-    "react-native-typescript-transformer": "^1.2.13",
-    "typescript": "^4.0.3",
-    "@react-native-community/eslint-config": "^3.0.0",
-    "eslint": "^8.0.0",
-    "eslint-config-airbnb": "^19.0.0",
+    "@commitlint/cli": "^15.0.0",
+    "@commitlint/config-conventional": "^15.0.0",
+    "@react-native-community/eslint-config": "^2.0.0",
+    "@types/react": "^16.9.53",
+    "@types/react-native": "^0.63.25",
+    "eslint": "^7.11.0",
+    "eslint-config-airbnb": "^18.2.0",
     "husky": "^7.0.0",
-    "lint-staged": "^12.0.3",
-    "prettier": "^2.1.2"
+    "lint-staged": "^10.4.2",
+    "npm-post-install": "0.0.2",
+    "prettier": "^2.1.2",
+    "prettier-format": "^3.0.3",
+    "react-native-typescript-transformer": "^1.2.13",
+    "typescript": "^4.0.3"
+  },
+  "scripts": {
+    "build": "cd lib && tsc && cp ../package.json ../build/dist/ && Echo Build completed!",
+    "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
+    "lint": "tslint -p tsconfig.json",
+    "version": "npm run format && git add -A src",
+    "postversion": "git push && git push --tags",
+    "prettier": "cd lib && npx prettier --write . && git add .",
+    "prepare": "husky install",
+    "husky:setup": "npx husky-init && npm run husky:commitlint && npm run husky:prettier",
+    "husky:commitlint": "npx husky add .husky/commit-msg 'npx --no-install commitlint --edit'",
+    "husky:prettier": "npx husky add .husky/pre-commit 'npm run prettier'"
   }
 }
