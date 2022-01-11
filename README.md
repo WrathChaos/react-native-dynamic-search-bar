@@ -78,15 +78,6 @@ npm i WrathChaos/react-native-dynamic-vector-icons#expo
 import SearchBar from "react-native-dynamic-search-bar";
 ```
 
-## Component Options
-
-There are two modes in the library:
-
-<ul>
-  <li><b>Search Button</b></li>
-  <li><b>Search TextInput</b></li>
-</ul>
-
 ## Basic Usage
 
 ```jsx
