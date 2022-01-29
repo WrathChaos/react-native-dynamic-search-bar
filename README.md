@@ -161,6 +161,7 @@ export default class Test extends Component {
 | --------------------- | :--------: | :--------------: | ------------------------------------------------------------------------ |
 | style                 | ViewStyle  |     default      | set or override the style object for the main search view                |
 | darkMode              |  boolean   |      false       | enable the dark mode                                                     |
+| shadow                |  boolean   |      true        | disable the shadow                                                    |
 | onChangeText          |  function  |     function     | set your own function for the onChangeText logic                         |
 | onPress               |  function  |     function     | set your own function for the onPress functionality                      |
 | onSearchPress         |  function  |     function     | set your own function for the **search** button's onPress functionality  |
