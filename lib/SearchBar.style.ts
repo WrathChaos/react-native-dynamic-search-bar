@@ -7,7 +7,7 @@ interface Style {
   clearIconContainer: ViewStyle;
   spinnerContainer: ViewStyle;
 }
-export const _container = (darkMode: boolean): ViewStyle => ({
+export const _container = (darkMode: boolean, shadow: boolean): ViewStyle => ({
   height: 40,
   width: "90%",
   borderRadius: 12,
@@ -17,10 +17,10 @@ export const _container = (darkMode: boolean): ViewStyle => ({
   backgroundColor: darkMode ? "#19191a" : "#fdfdfd",
   shadowColor: darkMode ? "#19191a" : "#757575",
   shadowRadius: 8,
-  shadowOpacity: 0.3,
+  shadowOpacity: shadow ? 0.3 : 0.0,
   shadowOffset: {
     width: 0,
-    height: 3,
+    height: 3
   },
 });
 
