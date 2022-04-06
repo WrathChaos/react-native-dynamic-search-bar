@@ -70,6 +70,15 @@ npm i WrathChaos/react-native-dynamic-vector-icons#expo
 "@freakycoder/react-native-bounceable": ">= 0.2.2",
 ```
 
+## Expo Peer Dependencies
+
+###### IMPORTANT! You need install them
+
+```js
+"react-native-animated-spinkit": ">= 1.5.0",
+"@freakycoder/react-native-bounceable": ">= 0.2.2",
+```
+
 # Usage
 
 ## Import
