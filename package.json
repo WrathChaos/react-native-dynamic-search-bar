@@ -21,7 +21,7 @@
   ],
   "homepage": "https://www.freakycoder.com",
   "bugs": "https://github.com/WrathChaos/react-native-dynamic-search-bar/issues",
-  "main": "./build/dist/SearchBar.js",
+  "main": "./expo-build/dist/SearchBar.js",
   "repository": "git@github.com:WrathChaos/react-native-dynamic-search-bar.git",
   "author": "Kuray (FreakyCoder) <kurayogun@gmail.com>",
   "license": "MIT",
