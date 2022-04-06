@@ -1,0 +1,39 @@
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "es6",
+    "lib": ["es6"],
+    "allowJs": true,
+    "jsx": "react-native",
+    "noImplicitAny": false,
+    "incremental": true /* Enable incremental compilation */,
+    "isolatedModules": true,
+    "strict": true,
+    "moduleResolution": "node",
+    "baseUrl": "./",
+    "outDir": "build/dist",
+    "noEmitHelpers": true,
+    "alwaysStrict": true,
+    "strictFunctionTypes": true,
+    "resolveJsonModule": true,
+    "importHelpers": false,
+    "experimentalDecorators": true,
+    "strictPropertyInitialization": false,
+    "allowSyntheticDefaultImports": true,
+    "strictNullChecks": true,
+    "skipDefaultLibCheck": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "typeRoots": ["./node_modules/@types", "./@types"],
+    "declaration": true /* Generates corresponding '.d.ts' file. */,
+    "sourceMap": true /* Generates corresponding '.map' file. */
+  },
+  "exclude": [
+    "example",
+    "example-manual-state",
+    "node_modules",
+    "babel.config.js",
+    "metro.config.js",
+    "jest.config.js"
+  ]
+}
