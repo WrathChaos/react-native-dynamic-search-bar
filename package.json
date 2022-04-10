@@ -33,7 +33,7 @@
     "@commitlint/cli": "^16.0.0",
     "@commitlint/config-conventional": "^16.2.1",
     "@react-native-community/eslint-config": "^2.0.0",
-    "@types/react": "^17.0.37",
+    "@types/react": "^18.0.0",
     "@types/react-native": "^0.67.1",
     "eslint": "^8.5.0",
     "eslint-config-airbnb": "^19.0.4",
