@@ -52,13 +52,16 @@ Add the dependency:
 
 ```js
 npm i react-native-dynamic-search-bar
+npm i react-native-spinkit
+npm i @freakycoder/react-native-bounceable
 ```
 
 ### Expo Version
 
 ```js
 npm i WrathChaos/react-native-dynamic-search-bar#expo
-npm i WrathChaos/react-native-dynamic-vector-icons#expo
+npm i react-native-animated-spinkit
+npm i @freakycoder/react-native-bounceable
 ```
 
 ## Peer Dependencies
