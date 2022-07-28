@@ -1,17 +1,17 @@
-import React, { Component } from "react";
-import { View, StatusBar, FlatList, Platform, UIManager } from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
-import { LineChart } from "react-native-svg-charts";
-import GradientCard from "react-native-gradient-card-view";
-import { ScreenWidth } from "@freakycoder/react-native-helpers";
+import React, {Component} from 'react';
+import {View, StatusBar, FlatList, Platform, UIManager} from 'react-native';
+import {SafeAreaView} from 'react-native-safe-area-context';
+import {LineChart} from 'react-native-svg-charts';
+import GradientCard from 'react-native-gradient-card-view';
+import {ScreenWidth} from '@freakycoder/react-native-helpers';
 /**
  * ? Local Imports
  */
 // import SearchBar from "react-native-dynamic-search-bar";
-import SearchBar from "react-native-dynamic-search-bar";
-import styles, { centerSubtitleStyle } from "./styles";
+import SearchBar from 'react-native-dynamic-search-bar';
+import styles, {centerSubtitleStyle} from './styles';
 // Static Data
-import staticData from "./src/data/staticData";
+import staticData from './src/data/staticData';
 
 interface IProps {}
 
@@ -28,7 +28,7 @@ export default class App extends Component<IProps, IState> {
   constructor(props: IProps) {
     super(props);
     this.state = {
-      query: "",
+      query: '',
       isLoading: true,
       refreshing: false,
       dataBackup: staticData,
@@ -36,7 +36,7 @@ export default class App extends Component<IProps, IState> {
       spinnerVisibility: false,
     };
 
-    if (Platform.OS === "android") {
+    if (Platform.OS === 'android') {
       UIManager.setLayoutAnimationEnabledExperimental &&
         UIManager.setLayoutAnimationEnabledExperimental(true);
     }
@@ -89,30 +89,32 @@ export default class App extends Component<IProps, IState> {
   }
 
   render() {
-    const { spinnerVisibility } = this.state;
+    const {spinnerVisibility} = this.state;
     return (
       <SafeAreaView style={styles.safeAreaViewStyle}>
-        <StatusBar barStyle={"light-content"} />
+        <StatusBar barStyle={'light-content'} />
         <View style={styles.container}>
           <SearchBar
             darkMode
             placeholder="Search"
             spinnerVisibility={spinnerVisibility}
-            style={{ backgroundColor: "#353d5e" }}
-            onChangeText={(text) => {
-              if (text.length === 0)
-                this.setState({ spinnerVisibility: false });
-              else this.setState({ spinnerVisibility: true });
+            style={{backgroundColor: '#353d5e'}}
+            onChangeText={text => {
+              if (text.length === 0) {
+                this.setState({spinnerVisibility: false});
+              } else {
+                this.setState({spinnerVisibility: true});
+              }
               this.filterList(text);
             }}
             onClearPress={() => {
-              this.filterList("");
+              this.filterList('');
             }}
           />
           <View style={styles.flatListStyle}>
             <FlatList
               data={this.state.dataSource}
-              renderItem={({ item }) => this.renderItem(item)}
+              renderItem={({item}) => this.renderItem(item)}
             />
           </View>
         </View>
