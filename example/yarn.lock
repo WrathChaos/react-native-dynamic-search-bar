@@ -788,10 +788,10 @@
     "minimatch" "^3.0.4"
     "strip-json-comments" "^3.1.1"
 
-"@freakycoder/react-native-bounceable@^0.2.2", "@freakycoder/react-native-bounceable@>= 0.2.2":
-  "integrity" "sha512-J8WBOYxbm/um7SqXYneduZ08T5Kin9z+ixsS3wOLtpeNvKscuqmDEgsgefTYydeSIoI5dOfWmklnRRgu5i/8nA=="
-  "resolved" "https://registry.npmjs.org/@freakycoder/react-native-bounceable/-/react-native-bounceable-0.2.5.tgz"
-  "version" "0.2.5"
+"@freakycoder/react-native-bounceable@^1.0.2", "@freakycoder/react-native-bounceable@>= 0.2.2":
+  "integrity" "sha512-kk3DeR6Cq4hOuJeoDuaFKA47pbW1fgqHogJwrYIvr1GvZ7j+fusbAslOIZFnLdbUg5mIXfKg+WpGt51S4Ya5fg=="
+  "resolved" "https://registry.npmjs.org/@freakycoder/react-native-bounceable/-/react-native-bounceable-1.0.2.tgz"
+  "version" "1.0.2"
 
 "@freakycoder/react-native-helpers@^1.0.2":
   "integrity" "sha512-VBFNOQg7VTCyAP/ty0O2anlOrZtBPThwMXywU0IMbkcUkk38UO1DQ6A93NMstA2vf1ozJ4QqKd/IIv9rgrcR2A=="
@@ -5959,7 +5959,7 @@
     "jscodeshift" "^0.13.1"
     "nullthrows" "^1.1.1"
 
-"react-native-dynamic-search-bar@^2.0.0":
+"react-native-dynamic-search-bar@^2.0.2":
   "integrity" "sha512-VOJf43hwfA5TRmYPTmPd5+unosruKXxVL41vP/AaofMrYM90hen0LOgGxUkZquqjg/nQidv/PsQhzOx02orE7w=="
   "resolved" "https://registry.npmjs.org/react-native-dynamic-search-bar/-/react-native-dynamic-search-bar-2.0.2.tgz"
   "version" "2.0.2"

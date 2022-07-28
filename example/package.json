@@ -15,7 +15,7 @@
     "@freakycoder/react-native-bounceable": "^1.0.2",
     "@freakycoder/react-native-helpers": "^1.0.2",
     "react-native-animation-layout": "0.0.13",
-    "react-native-dynamic-search-bar": "^2.0.0",
+    "react-native-dynamic-search-bar": "^2.0.2",
     "react-native-fast-image": "^8.3.2",
     "react-native-gesture-handler": "^1.8.0",
     "react-native-gradient-card-view": "0.1.0",
