@@ -42,7 +42,7 @@ Version 2.0 is here 🥳
 - Better prop management and cool customizations are possible now
 - Dark Mode integration 🌙
 
-<i>I can't waiting to see what you're going to make with this `SearchBar` 😍</i>
+<i>I can't wait to see what you're going to make with this `SearchBar` 😍</i>
 
 ## Installation
 
