@@ -50,17 +50,25 @@ Add the dependency:
 
 ### React Native
 
-```js
+```bash
 npm i react-native-dynamic-search-bar
+```
+```bash
 npm i react-native-spinkit
+```
+```bash
 npm i @freakycoder/react-native-bounceable
 ```
 
 ### Expo Version
 
-```js
+```bash
 npm i WrathChaos/react-native-dynamic-search-bar#expo
+```
+```bash
 npm i react-native-animated-spinkit
+```
+```bash
 npm i @freakycoder/react-native-bounceable
 ```
 
