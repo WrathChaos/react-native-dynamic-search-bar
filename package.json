@@ -30,7 +30,7 @@
     "@freakycoder/react-native-bounceable": ">= 0.2.2"
   },
   "devDependencies": {
-    "@commitlint/cli": "^18.0.0",
+    "@commitlint/cli": "^19.0.1",
     "@commitlint/config-conventional": "^18.0.0",
     "@react-native-community/eslint-config": "^3.0.2",
     "@types/react": "^18.0.0",
